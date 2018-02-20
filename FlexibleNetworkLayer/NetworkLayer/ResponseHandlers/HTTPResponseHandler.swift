@@ -12,10 +12,10 @@ class HTTPResponseHandler: ResponseHandler {
     var jsonSerializer = JSONSerializer()
     var stringSerializer = StringSerializer()
     var errorHandler: ErrorHandler = BaseErrorHandler()
-    var succesResponseChecker: SuccessResponseChecker = BaseSuccessResponseChecker()
+    var successResponseChecker: SuccessResponseChecker = BaseSuccessResponseChecker()
     
     func handleResponse(_ response: ResponseRepresentable, completion: (Result) -> ()) {
-        if succesResponseChecker.isSuccesResponse(response) {
+        if successResponseChecker.isSuccessResponse(response) {
             processSuccessResponse(response, completion: completion)
         } else {
             processFailureResponse(response, completion: completion)

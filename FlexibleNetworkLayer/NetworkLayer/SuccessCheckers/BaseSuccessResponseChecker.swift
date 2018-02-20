@@ -9,7 +9,7 @@
 import Foundation
 
 struct BaseSuccessResponseChecker: SuccessResponseChecker {
-    func isSuccesResponse(_ response: ResponseRepresentable) -> Bool {
+    func isSuccessResponse(_ response: ResponseRepresentable) -> Bool {
         guard let httpResponse = response.response as? HTTPURLResponse else {
             return false
         }

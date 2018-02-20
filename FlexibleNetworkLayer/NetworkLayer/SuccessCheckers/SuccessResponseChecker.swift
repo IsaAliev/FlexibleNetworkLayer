@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SuccessResponseChecker {
-    func isSuccesResponse(_ response: ResponseRepresentable) -> Bool
+    func isSuccessResponse(_ response: ResponseRepresentable) -> Bool
 }

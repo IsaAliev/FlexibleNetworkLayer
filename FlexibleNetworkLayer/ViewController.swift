@@ -16,8 +16,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let responseHandler = HTTPResponseHandler()
-        responseHandler.succesResponseChecker = VKAPISuccesChecker()
+        responseHandler.successResponseChecker = VKAPISuccessChecker()
         responseHandler.errorHandler.errorMessageGetter = VKAPIErrorMessageGetter()
+        responseHandler.errorHandler.errorCodeGetter = VKAPIErrorCodeGetter()
         service.responseHandler = responseHandler
         
         service.sendRequest()

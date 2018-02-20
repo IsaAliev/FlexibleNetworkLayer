@@ -1,5 +1,5 @@
 //
-//  VKAPISuccesChecker.swift
+//  VKAPISuccessChecker.swift
 //  FlexibleNetworkLayer
 //
 //  Created by Isa Aliev on 20.02.2018.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct VKAPISuccesChecker: SuccessResponseChecker {
+struct VKAPISuccessChecker: SuccessResponseChecker {
     let jsonSerializer = JSONSerializer()
     
-    func isSuccesResponse(_ response: ResponseRepresentable) -> Bool {
+    func isSuccessResponse(_ response: ResponseRepresentable) -> Bool {
         guard let data = response.data else {
             return false
         }

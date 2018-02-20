@@ -10,39 +10,17 @@ import Foundation
 
 class BaseService: Service {
     var responseHandler: ResponseHandler? = HTTPResponseHandler()
-    
     var request: RequestRepresentable? = BaseRequest()
-    
-    var errorHandler: ErrorHandler?
-    
+
     var session: URLSession {
         let session = URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: nil)
         return session
     }
     
     func sendRequest() {
-        guard let requestToSend = request else {
+        guard let urlRequest = request?.urlRequest() else {
             return
         }
-        
-        guard var urlComponents = URLComponents(string: requestToSend.path) else {
-            return
-        }
-        
-        if let parametersJSON = requestToSend.parameters {
-            var queryItems = [URLQueryItem]()
-            for (key, value) in parametersJSON {
-                queryItems.append(URLQueryItem(name: key, value: value as? String))
-            }
-            urlComponents.queryItems = queryItems
-        }
-        
-        guard let url = urlComponents.url else {
-            return
-        }
-        
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = requestToSend.HTTPMethod
 
         session.dataTask(with: urlRequest) { [weak self] (data, response, error) in
             let response = BaseResponse(data: data, response: response, error: error)
@@ -50,7 +28,7 @@ class BaseService: Service {
             self?.responseHandler?.handleResponse(response, completion: { [weak self] (result) in
                 switch result {
                 case let .JSONValue(json):
-                    self?.processSuccesJSON(json)
+                    self?.processSuccessJSON(json)
                 case let .Error(error):
                     self?.processError(error)
                 case let .StringValue(string):
@@ -62,8 +40,8 @@ class BaseService: Service {
         }.resume()
     }
     
-    func processSuccesJSON(_ json: JSON) {
-        
+    func processSuccessJSON(_ json: JSON) {
+        print(json)
     }
     
     func processSuccessString(_ string: String) {
