@@ -10,6 +10,5 @@ import Foundation
 
 protocol ErrorRepresentable {
     var message: String? { get set }
-    var statusCode: Int { get set }
-    var data: Data? { get set }
+    var errorCode: Int { get set }
 }

@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4366F686203C15D200A06CC7 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F685203C15D200A06CC7 /* Serializer.swift */; };
+		4366F689203C161E00A06CC7 /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F688203C161E00A06CC7 /* JSONSerializer.swift */; };
+		4366F68B203C166700A06CC7 /* StringSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F68A203C166700A06CC7 /* StringSerializer.swift */; };
+		4366F693203C560200A06CC7 /* ErrorCodeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F692203C560200A06CC7 /* ErrorCodeHandler.swift */; };
+		4366F695203C562200A06CC7 /* BaseErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F694203C562200A06CC7 /* BaseErrorHandler.swift */; };
+		4366F697203C565600A06CC7 /* BaseErrorCodeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F696203C565600A06CC7 /* BaseErrorCodeHandler.swift */; };
+		4366F699203C595F00A06CC7 /* ErrorMessageGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F698203C595F00A06CC7 /* ErrorMessageGetter.swift */; };
+		4366F69B203C599200A06CC7 /* BaseErrorMessageGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F69A203C599200A06CC7 /* BaseErrorMessageGetter.swift */; };
+		4366F69D203C603900A06CC7 /* SuccessResponseChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F69C203C603900A06CC7 /* SuccessResponseChecker.swift */; };
+		4366F69F203C607900A06CC7 /* BaseSuccessResponseChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F69E203C607900A06CC7 /* BaseSuccessResponseChecker.swift */; };
+		4366F6A2203C629000A06CC7 /* VKAPISuccesChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F6A1203C629000A06CC7 /* VKAPISuccesChecker.swift */; };
+		4366F6A4203C63A600A06CC7 /* VKAPIErrorMessageGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F6A3203C63A600A06CC7 /* VKAPIErrorMessageGetter.swift */; };
+		4366F6A6203C68BE00A06CC7 /* ErrorCodeGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F6A5203C68BE00A06CC7 /* ErrorCodeGetter.swift */; };
+		4366F6A8203C68E600A06CC7 /* VKAPIErrorCodeGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F6A7203C68E600A06CC7 /* VKAPIErrorCodeGetter.swift */; };
+		4366F6AA203C6D0D00A06CC7 /* BaseErrorCodeGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F6A9203C6D0D00A06CC7 /* BaseErrorCodeGetter.swift */; };
 		CE1EDE6F203B622E00E58426 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE6E203B622E00E58426 /* AppDelegate.swift */; };
 		CE1EDE71203B622E00E58426 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE70203B622E00E58426 /* ViewController.swift */; };
 		CE1EDE74203B622E00E58426 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1EDE72203B622E00E58426 /* Main.storyboard */; };
@@ -21,12 +36,27 @@
 		CE1EDE8E203B649300E58426 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE8D203B649300E58426 /* ErrorHandler.swift */; };
 		CE1EDE90203B64D100E58426 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE8F203B64D100E58426 /* BaseService.swift */; };
 		CE1EDE92203B69A700E58426 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE91203B69A700E58426 /* BaseResponse.swift */; };
-		CE1EDE94203B69FC00E58426 /* BaseResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE93203B69FC00E58426 /* BaseResponseHandler.swift */; };
+		CE1EDE94203B69FC00E58426 /* HTTPResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE93203B69FC00E58426 /* HTTPResponseHandler.swift */; };
 		CE1EDE96203B6C6B00E58426 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE95203B6C6B00E58426 /* BaseRequest.swift */; };
 		CE1EDE98203B6E0B00E58426 /* BaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE97203B6E0B00E58426 /* BaseError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4366F685203C15D200A06CC7 /* Serializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
+		4366F688203C161E00A06CC7 /* JSONSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
+		4366F68A203C166700A06CC7 /* StringSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSerializer.swift; sourceTree = "<group>"; };
+		4366F692203C560200A06CC7 /* ErrorCodeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCodeHandler.swift; sourceTree = "<group>"; };
+		4366F694203C562200A06CC7 /* BaseErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorHandler.swift; sourceTree = "<group>"; };
+		4366F696203C565600A06CC7 /* BaseErrorCodeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorCodeHandler.swift; sourceTree = "<group>"; };
+		4366F698203C595F00A06CC7 /* ErrorMessageGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageGetter.swift; sourceTree = "<group>"; };
+		4366F69A203C599200A06CC7 /* BaseErrorMessageGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorMessageGetter.swift; sourceTree = "<group>"; };
+		4366F69C203C603900A06CC7 /* SuccessResponseChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponseChecker.swift; sourceTree = "<group>"; };
+		4366F69E203C607900A06CC7 /* BaseSuccessResponseChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSuccessResponseChecker.swift; sourceTree = "<group>"; };
+		4366F6A1203C629000A06CC7 /* VKAPISuccesChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPISuccesChecker.swift; sourceTree = "<group>"; };
+		4366F6A3203C63A600A06CC7 /* VKAPIErrorMessageGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPIErrorMessageGetter.swift; sourceTree = "<group>"; };
+		4366F6A5203C68BE00A06CC7 /* ErrorCodeGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCodeGetter.swift; sourceTree = "<group>"; };
+		4366F6A7203C68E600A06CC7 /* VKAPIErrorCodeGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPIErrorCodeGetter.swift; sourceTree = "<group>"; };
+		4366F6A9203C6D0D00A06CC7 /* BaseErrorCodeGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorCodeGetter.swift; sourceTree = "<group>"; };
 		CE1EDE6B203B622E00E58426 /* FlexibleNetworkLayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlexibleNetworkLayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1EDE6E203B622E00E58426 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE1EDE70203B622E00E58426 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,7 +73,7 @@
 		CE1EDE8D203B649300E58426 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		CE1EDE8F203B64D100E58426 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		CE1EDE91203B69A700E58426 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
-		CE1EDE93203B69FC00E58426 /* BaseResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseHandler.swift; sourceTree = "<group>"; };
+		CE1EDE93203B69FC00E58426 /* HTTPResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponseHandler.swift; sourceTree = "<group>"; };
 		CE1EDE95203B6C6B00E58426 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		CE1EDE97203B6E0B00E58426 /* BaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +89,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4366F687203C160D00A06CC7 /* Serializers */ = {
+			isa = PBXGroup;
+			children = (
+				4366F685203C15D200A06CC7 /* Serializer.swift */,
+				4366F688203C161E00A06CC7 /* JSONSerializer.swift */,
+				4366F68A203C166700A06CC7 /* StringSerializer.swift */,
+			);
+			path = Serializers;
+			sourceTree = "<group>";
+		};
+		4366F68E203C1C6F00A06CC7 /* ResponseHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				CE1EDE89203B635300E58426 /* ResponseHandler.swift */,
+				CE1EDE93203B69FC00E58426 /* HTTPResponseHandler.swift */,
+			);
+			path = ResponseHandlers;
+			sourceTree = "<group>";
+		};
+		4366F691203C55F100A06CC7 /* ErrorHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				CE1EDE8D203B649300E58426 /* ErrorHandler.swift */,
+				4366F692203C560200A06CC7 /* ErrorCodeHandler.swift */,
+				4366F694203C562200A06CC7 /* BaseErrorHandler.swift */,
+				4366F696203C565600A06CC7 /* BaseErrorCodeHandler.swift */,
+				4366F698203C595F00A06CC7 /* ErrorMessageGetter.swift */,
+				4366F69A203C599200A06CC7 /* BaseErrorMessageGetter.swift */,
+				4366F6A3203C63A600A06CC7 /* VKAPIErrorMessageGetter.swift */,
+				4366F6A5203C68BE00A06CC7 /* ErrorCodeGetter.swift */,
+				4366F6A7203C68E600A06CC7 /* VKAPIErrorCodeGetter.swift */,
+				4366F6A9203C6D0D00A06CC7 /* BaseErrorCodeGetter.swift */,
+			);
+			path = ErrorHandlers;
+			sourceTree = "<group>";
+		};
+		4366F6A0203C621B00A06CC7 /* SuccesCheckers */ = {
+			isa = PBXGroup;
+			children = (
+				4366F69C203C603900A06CC7 /* SuccessResponseChecker.swift */,
+				4366F69E203C607900A06CC7 /* BaseSuccessResponseChecker.swift */,
+				4366F6A1203C629000A06CC7 /* VKAPISuccesChecker.swift */,
+			);
+			path = SuccesCheckers;
+			sourceTree = "<group>";
+		};
 		CE1EDE62203B622E00E58426 = {
 			isa = PBXGroup;
 			children = (
@@ -92,16 +168,17 @@
 		CE1EDE80203B623800E58426 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				4366F6A0203C621B00A06CC7 /* SuccesCheckers */,
+				4366F691203C55F100A06CC7 /* ErrorHandlers */,
+				4366F68E203C1C6F00A06CC7 /* ResponseHandlers */,
+				4366F687203C160D00A06CC7 /* Serializers */,
 				CE1EDE81203B626100E58426 /* RequestRepresentable.swift */,
 				CE1EDE83203B62A500E58426 /* ErrorRepresentable.swift */,
 				CE1EDE85203B62CF00E58426 /* ResponseRepresentable.swift */,
 				CE1EDE87203B62FB00E58426 /* RequestSender.swift */,
-				CE1EDE89203B635300E58426 /* ResponseHandler.swift */,
-				CE1EDE8D203B649300E58426 /* ErrorHandler.swift */,
 				CE1EDE8B203B640B00E58426 /* Service.swift */,
 				CE1EDE8F203B64D100E58426 /* BaseService.swift */,
 				CE1EDE91203B69A700E58426 /* BaseResponse.swift */,
-				CE1EDE93203B69FC00E58426 /* BaseResponseHandler.swift */,
 				CE1EDE95203B6C6B00E58426 /* BaseRequest.swift */,
 				CE1EDE97203B6E0B00E58426 /* BaseError.swift */,
 			);
@@ -180,20 +257,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4366F69B203C599200A06CC7 /* BaseErrorMessageGetter.swift in Sources */,
+				4366F6A2203C629000A06CC7 /* VKAPISuccesChecker.swift in Sources */,
+				4366F693203C560200A06CC7 /* ErrorCodeHandler.swift in Sources */,
 				CE1EDE71203B622E00E58426 /* ViewController.swift in Sources */,
 				CE1EDE8C203B640B00E58426 /* Service.swift in Sources */,
 				CE1EDE84203B62A500E58426 /* ErrorRepresentable.swift in Sources */,
+				4366F689203C161E00A06CC7 /* JSONSerializer.swift in Sources */,
+				4366F69F203C607900A06CC7 /* BaseSuccessResponseChecker.swift in Sources */,
 				CE1EDE88203B62FB00E58426 /* RequestSender.swift in Sources */,
-				CE1EDE94203B69FC00E58426 /* BaseResponseHandler.swift in Sources */,
+				4366F69D203C603900A06CC7 /* SuccessResponseChecker.swift in Sources */,
+				4366F699203C595F00A06CC7 /* ErrorMessageGetter.swift in Sources */,
+				4366F695203C562200A06CC7 /* BaseErrorHandler.swift in Sources */,
+				4366F697203C565600A06CC7 /* BaseErrorCodeHandler.swift in Sources */,
+				4366F686203C15D200A06CC7 /* Serializer.swift in Sources */,
+				CE1EDE94203B69FC00E58426 /* HTTPResponseHandler.swift in Sources */,
 				CE1EDE86203B62CF00E58426 /* ResponseRepresentable.swift in Sources */,
+				4366F6A6203C68BE00A06CC7 /* ErrorCodeGetter.swift in Sources */,
 				CE1EDE6F203B622E00E58426 /* AppDelegate.swift in Sources */,
+				4366F68B203C166700A06CC7 /* StringSerializer.swift in Sources */,
 				CE1EDE8E203B649300E58426 /* ErrorHandler.swift in Sources */,
+				4366F6A8203C68E600A06CC7 /* VKAPIErrorCodeGetter.swift in Sources */,
+				4366F6AA203C6D0D00A06CC7 /* BaseErrorCodeGetter.swift in Sources */,
 				CE1EDE82203B626100E58426 /* RequestRepresentable.swift in Sources */,
 				CE1EDE90203B64D100E58426 /* BaseService.swift in Sources */,
 				CE1EDE92203B69A700E58426 /* BaseResponse.swift in Sources */,
 				CE1EDE96203B6C6B00E58426 /* BaseRequest.swift in Sources */,
 				CE1EDE8A203B635300E58426 /* ResponseHandler.swift in Sources */,
 				CE1EDE98203B6E0B00E58426 /* BaseError.swift in Sources */,
+				4366F6A4203C63A600A06CC7 /* VKAPIErrorMessageGetter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

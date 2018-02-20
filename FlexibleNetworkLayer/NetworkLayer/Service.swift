@@ -9,7 +9,7 @@
 import Foundation
 
 protocol Service {
-    var request: RequestRepresentable? { get }
+    var request: RequestRepresentable? { get set }
     
     var responseHandler: ResponseHandler? { get set }
     var errorHandler: ErrorHandler? { get set }

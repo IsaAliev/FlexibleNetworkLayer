@@ -10,5 +10,6 @@ import Foundation
 
 protocol ResponseRepresentable {
     var data: Data? { get set }
-    var error: ErrorRepresentable? { get set }
+    var response: URLResponse? { get set }
+    var error: Error? { get set }
 }

@@ -11,5 +11,5 @@ import Foundation
 struct BaseRequest: RequestRepresentable {
     var path: String = "https://api.vk.com/method/users.get"
     var HTTPMethod: String = "GET"
-    var parameters: JSON? = ["user_ids": "210700286,212100336", "v": "5.73"]
+    var parameters: JSON? = ["user_ids": "00213", "v": "5.73"]
 }

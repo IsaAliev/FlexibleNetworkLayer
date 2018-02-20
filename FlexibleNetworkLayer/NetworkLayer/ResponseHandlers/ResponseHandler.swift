@@ -11,7 +11,8 @@ import Foundation
 typealias JSON = [String: Any]
 
 enum Result {
-    case Value(JSON)
+    case JSONValue(JSON)
+    case StringValue(String)
     case Error(ErrorRepresentable)
     case None
 }

@@ -9,7 +9,6 @@
 import Foundation
 
 struct BaseError: ErrorRepresentable {
-    var statusCode: Int
+    var errorCode: Int
     var message: String?
-    var data: Data?
 }

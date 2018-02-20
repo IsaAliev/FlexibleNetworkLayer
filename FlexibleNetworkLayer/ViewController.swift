@@ -15,6 +15,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let responseHandler = HTTPResponseHandler()
+        responseHandler.succesResponseChecker = VKAPISuccesChecker()
+        responseHandler.errorHandler.errorMessageGetter = VKAPIErrorMessageGetter()
+        service.responseHandler = responseHandler
+        
         service.sendRequest()
         // Do any additional setup after loading the view, typically from a nib.
     }

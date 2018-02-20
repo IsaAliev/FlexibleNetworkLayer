@@ -10,5 +10,6 @@ import Foundation
 
 struct BaseResponse: ResponseRepresentable {
     var data: Data?
-    var error: ErrorRepresentable?
+    var response: URLResponse?
+    var error: Error?
 }

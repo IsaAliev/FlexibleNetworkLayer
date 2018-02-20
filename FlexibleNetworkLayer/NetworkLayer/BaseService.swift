@@ -8,16 +8,15 @@
 
 import Foundation
 
-class BaseService: NSObject, Service {
-    var request: RequestRepresentable? {
-        return BaseRequest()
-    }
+class BaseService: Service {
+    var responseHandler: ResponseHandler? = HTTPResponseHandler()
     
-    var responseHandler: ResponseHandler? = BaseResponseHandler()
+    var request: RequestRepresentable? = BaseRequest()
+    
     var errorHandler: ErrorHandler?
     
     var session: URLSession {
-        let session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
+        let session = URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: nil)
         return session
     }
     
@@ -37,22 +36,42 @@ class BaseService: NSObject, Service {
             }
             urlComponents.queryItems = queryItems
         }
+        
         guard let url = urlComponents.url else {
             return
         }
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = requestToSend.HTTPMethod
 
+        session.dataTask(with: urlRequest) { [weak self] (data, response, error) in
+            let response = BaseResponse(data: data, response: response, error: error)
+            
+            self?.responseHandler?.handleResponse(response, completion: { [weak self] (result) in
+                switch result {
+                case let .JSONValue(json):
+                    self?.processSuccesJSON(json)
+                case let .Error(error):
+                    self?.processError(error)
+                case let .StringValue(string):
+                    self?.processSuccessString(string)
+                default:
+                    break
+                }
+            })
+        }.resume()
+    }
+    
+    func processSuccesJSON(_ json: JSON) {
         
-        session.dataTask(with: urlRequest).resume()
+    }
+    
+    func processSuccessString(_ string: String) {
+        
+    }
+    
+    func processError(_ error: ErrorRepresentable) {
+        
     }
 }
 
-extension BaseService: URLSessionDataDelegate {
-    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
-        let response = BaseResponse(data: data, error: nil)
-        responseHandler?.handleResponse(response, completion: { (result) in
-            print(result)
-        })
-    }
-}
