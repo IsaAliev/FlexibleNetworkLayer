@@ -10,8 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let service = BaseService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        service.sendRequest()
         // Do any additional setup after loading the view, typically from a nib.
     }
 

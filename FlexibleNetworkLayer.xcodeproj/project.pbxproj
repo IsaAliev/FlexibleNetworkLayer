@@ -12,6 +12,18 @@
 		CE1EDE74203B622E00E58426 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1EDE72203B622E00E58426 /* Main.storyboard */; };
 		CE1EDE76203B622E00E58426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1EDE75203B622E00E58426 /* Assets.xcassets */; };
 		CE1EDE79203B622E00E58426 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1EDE77203B622E00E58426 /* LaunchScreen.storyboard */; };
+		CE1EDE82203B626100E58426 /* RequestRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE81203B626100E58426 /* RequestRepresentable.swift */; };
+		CE1EDE84203B62A500E58426 /* ErrorRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE83203B62A500E58426 /* ErrorRepresentable.swift */; };
+		CE1EDE86203B62CF00E58426 /* ResponseRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE85203B62CF00E58426 /* ResponseRepresentable.swift */; };
+		CE1EDE88203B62FB00E58426 /* RequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE87203B62FB00E58426 /* RequestSender.swift */; };
+		CE1EDE8A203B635300E58426 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE89203B635300E58426 /* ResponseHandler.swift */; };
+		CE1EDE8C203B640B00E58426 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE8B203B640B00E58426 /* Service.swift */; };
+		CE1EDE8E203B649300E58426 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE8D203B649300E58426 /* ErrorHandler.swift */; };
+		CE1EDE90203B64D100E58426 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE8F203B64D100E58426 /* BaseService.swift */; };
+		CE1EDE92203B69A700E58426 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE91203B69A700E58426 /* BaseResponse.swift */; };
+		CE1EDE94203B69FC00E58426 /* BaseResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE93203B69FC00E58426 /* BaseResponseHandler.swift */; };
+		CE1EDE96203B6C6B00E58426 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE95203B6C6B00E58426 /* BaseRequest.swift */; };
+		CE1EDE98203B6E0B00E58426 /* BaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE97203B6E0B00E58426 /* BaseError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +34,18 @@
 		CE1EDE75203B622E00E58426 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE1EDE78203B622E00E58426 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE1EDE7A203B622E00E58426 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE1EDE81203B626100E58426 /* RequestRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRepresentable.swift; sourceTree = "<group>"; };
+		CE1EDE83203B62A500E58426 /* ErrorRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorRepresentable.swift; sourceTree = "<group>"; };
+		CE1EDE85203B62CF00E58426 /* ResponseRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseRepresentable.swift; sourceTree = "<group>"; };
+		CE1EDE87203B62FB00E58426 /* RequestSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSender.swift; sourceTree = "<group>"; };
+		CE1EDE89203B635300E58426 /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
+		CE1EDE8B203B640B00E58426 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		CE1EDE8D203B649300E58426 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		CE1EDE8F203B64D100E58426 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		CE1EDE91203B69A700E58426 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		CE1EDE93203B69FC00E58426 /* BaseResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseHandler.swift; sourceTree = "<group>"; };
+		CE1EDE95203B6C6B00E58426 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		CE1EDE97203B6E0B00E58426 /* BaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +78,7 @@
 		CE1EDE6D203B622E00E58426 /* FlexibleNetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				CE1EDE80203B623800E58426 /* NetworkLayer */,
 				CE1EDE6E203B622E00E58426 /* AppDelegate.swift */,
 				CE1EDE70203B622E00E58426 /* ViewController.swift */,
 				CE1EDE72203B622E00E58426 /* Main.storyboard */,
@@ -62,6 +87,25 @@
 				CE1EDE7A203B622E00E58426 /* Info.plist */,
 			);
 			path = FlexibleNetworkLayer;
+			sourceTree = "<group>";
+		};
+		CE1EDE80203B623800E58426 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				CE1EDE81203B626100E58426 /* RequestRepresentable.swift */,
+				CE1EDE83203B62A500E58426 /* ErrorRepresentable.swift */,
+				CE1EDE85203B62CF00E58426 /* ResponseRepresentable.swift */,
+				CE1EDE87203B62FB00E58426 /* RequestSender.swift */,
+				CE1EDE89203B635300E58426 /* ResponseHandler.swift */,
+				CE1EDE8D203B649300E58426 /* ErrorHandler.swift */,
+				CE1EDE8B203B640B00E58426 /* Service.swift */,
+				CE1EDE8F203B64D100E58426 /* BaseService.swift */,
+				CE1EDE91203B69A700E58426 /* BaseResponse.swift */,
+				CE1EDE93203B69FC00E58426 /* BaseResponseHandler.swift */,
+				CE1EDE95203B6C6B00E58426 /* BaseRequest.swift */,
+				CE1EDE97203B6E0B00E58426 /* BaseError.swift */,
+			);
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +181,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1EDE71203B622E00E58426 /* ViewController.swift in Sources */,
+				CE1EDE8C203B640B00E58426 /* Service.swift in Sources */,
+				CE1EDE84203B62A500E58426 /* ErrorRepresentable.swift in Sources */,
+				CE1EDE88203B62FB00E58426 /* RequestSender.swift in Sources */,
+				CE1EDE94203B69FC00E58426 /* BaseResponseHandler.swift in Sources */,
+				CE1EDE86203B62CF00E58426 /* ResponseRepresentable.swift in Sources */,
 				CE1EDE6F203B622E00E58426 /* AppDelegate.swift in Sources */,
+				CE1EDE8E203B649300E58426 /* ErrorHandler.swift in Sources */,
+				CE1EDE82203B626100E58426 /* RequestRepresentable.swift in Sources */,
+				CE1EDE90203B64D100E58426 /* BaseService.swift in Sources */,
+				CE1EDE92203B69A700E58426 /* BaseResponse.swift in Sources */,
+				CE1EDE96203B6C6B00E58426 /* BaseRequest.swift in Sources */,
+				CE1EDE8A203B635300E58426 /* ResponseHandler.swift in Sources */,
+				CE1EDE98203B6E0B00E58426 /* BaseError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
