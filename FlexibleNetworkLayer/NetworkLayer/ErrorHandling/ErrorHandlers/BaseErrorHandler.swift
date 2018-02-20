@@ -13,7 +13,7 @@ struct BaseErrorHandler: ErrorHandler {
     var errorCodeGetter: ErrorCodeGetter = BaseErrorCodeGetter()
     var errorMessageGetter: ErrorMessageGetter = BaseErrorMessageGetter()
     
-    func handleErrorResponse(_ response: ResponseRepresentable, completion: (Result) -> ()) {
+    func handleErrorResponse(_ response: ResponseRepresentable, completion: (ErrorRepresentable) -> ()) {
         guard let httpResponse = response.response as? HTTPURLResponse else {
             return
         }
@@ -29,6 +29,6 @@ struct BaseErrorHandler: ErrorHandler {
         let error = BaseError(errorCode: errorCode, message: errorMessage)
         errorCodeHandler.handleError(with: errorCode)
         
-        completion(.Error(error))
+        completion(error)
     }
 }

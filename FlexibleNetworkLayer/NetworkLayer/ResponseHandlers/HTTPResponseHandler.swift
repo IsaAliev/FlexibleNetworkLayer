@@ -27,6 +27,10 @@ class HTTPResponseHandler: ResponseHandler {
             return
         }
         
+//        let users = try? CodableModelDecodingProcessor<UsersList>().decodeFrom(data)
+//        print(users)
+//        
+        
         let serializedJSON = try? jsonSerializer.serialize(data)
         
         if let json = serializedJSON {
@@ -47,7 +51,9 @@ class HTTPResponseHandler: ResponseHandler {
     }
     
     private func processFailureResponse(_ response: ResponseRepresentable, completion: (Result) -> ()) {
-        errorHandler.handleErrorResponse(response, completion: completion)
+        errorHandler.handleErrorResponse(response) { (error) in
+            completion(.Error(error))
+        }
     }
 }
 

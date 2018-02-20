@@ -38,6 +38,10 @@
 		CE1EDE94203B69FC00E58426 /* HTTPResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE93203B69FC00E58426 /* HTTPResponseHandler.swift */; };
 		CE1EDE96203B6C6B00E58426 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE95203B6C6B00E58426 /* BaseRequest.swift */; };
 		CE1EDE98203B6E0B00E58426 /* BaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE97203B6E0B00E58426 /* BaseError.swift */; };
+		CE542E90203CA948009B44A8 /* CodableModelDecodingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE542E8F203CA948009B44A8 /* CodableModelDecodingProcessor.swift */; };
+		CE542E93203CAAB1009B44A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE542E92203CAAB1009B44A8 /* User.swift */; };
+		CE542E95203CB2B6009B44A8 /* UsersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE542E94203CB2B6009B44A8 /* UsersList.swift */; };
+		CE542E98203CB386009B44A8 /* DecodingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE542E97203CB386009B44A8 /* DecodingProcessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +78,10 @@
 		CE1EDE93203B69FC00E58426 /* HTTPResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponseHandler.swift; sourceTree = "<group>"; };
 		CE1EDE95203B6C6B00E58426 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		CE1EDE97203B6E0B00E58426 /* BaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseError.swift; sourceTree = "<group>"; };
+		CE542E8F203CA948009B44A8 /* CodableModelDecodingProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableModelDecodingProcessor.swift; sourceTree = "<group>"; };
+		CE542E92203CAAB1009B44A8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE542E94203CB2B6009B44A8 /* UsersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersList.swift; sourceTree = "<group>"; };
+		CE542E97203CB386009B44A8 /* DecodingProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingProcessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +152,7 @@
 		CE1EDE6D203B622E00E58426 /* FlexibleNetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				CE542E91203CAAA5009B44A8 /* Models */,
 				CE1EDE80203B623800E58426 /* NetworkLayer */,
 				CE1EDE6E203B622E00E58426 /* AppDelegate.swift */,
 				CE1EDE70203B622E00E58426 /* ViewController.swift */,
@@ -158,6 +167,7 @@
 		CE1EDE80203B623800E58426 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				CE542E96203CB362009B44A8 /* DecodingProcessors */,
 				CE542E8B203C980B009B44A8 /* ErrorHandling */,
 				4366F6A0203C621B00A06CC7 /* SuccessCheckers */,
 				4366F68E203C1C6F00A06CC7 /* ResponseHandlers */,
@@ -212,6 +222,24 @@
 				4366F6A9203C6D0D00A06CC7 /* BaseErrorCodeGetter.swift */,
 			);
 			path = ErrorCodeGetters;
+			sourceTree = "<group>";
+		};
+		CE542E91203CAAA5009B44A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE542E92203CAAB1009B44A8 /* User.swift */,
+				CE542E94203CB2B6009B44A8 /* UsersList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE542E96203CB362009B44A8 /* DecodingProcessors */ = {
+			isa = PBXGroup;
+			children = (
+				CE542E8F203CA948009B44A8 /* CodableModelDecodingProcessor.swift */,
+				CE542E97203CB386009B44A8 /* DecodingProcessor.swift */,
+			);
+			path = DecodingProcessors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,11 +322,14 @@
 				CE1EDE84203B62A500E58426 /* ErrorRepresentable.swift in Sources */,
 				4366F689203C161E00A06CC7 /* JSONSerializer.swift in Sources */,
 				4366F69F203C607900A06CC7 /* BaseSuccessResponseChecker.swift in Sources */,
+				CE542E93203CAAB1009B44A8 /* User.swift in Sources */,
 				4366F69D203C603900A06CC7 /* SuccessResponseChecker.swift in Sources */,
 				4366F699203C595F00A06CC7 /* ErrorMessageGetter.swift in Sources */,
 				4366F695203C562200A06CC7 /* BaseErrorHandler.swift in Sources */,
 				4366F697203C565600A06CC7 /* BaseErrorCodeHandler.swift in Sources */,
 				4366F686203C15D200A06CC7 /* Serializer.swift in Sources */,
+				CE542E95203CB2B6009B44A8 /* UsersList.swift in Sources */,
+				CE542E98203CB386009B44A8 /* DecodingProcessor.swift in Sources */,
 				CE1EDE94203B69FC00E58426 /* HTTPResponseHandler.swift in Sources */,
 				CE1EDE86203B62CF00E58426 /* ResponseRepresentable.swift in Sources */,
 				4366F6A6203C68BE00A06CC7 /* ErrorCodeGetter.swift in Sources */,
@@ -306,6 +337,7 @@
 				4366F68B203C166700A06CC7 /* StringSerializer.swift in Sources */,
 				CE1EDE8E203B649300E58426 /* ErrorHandler.swift in Sources */,
 				4366F6A8203C68E600A06CC7 /* VKAPIErrorCodeGetter.swift in Sources */,
+				CE542E90203CA948009B44A8 /* CodableModelDecodingProcessor.swift in Sources */,
 				4366F6AA203C6D0D00A06CC7 /* BaseErrorCodeGetter.swift in Sources */,
 				CE1EDE82203B626100E58426 /* RequestRepresentable.swift in Sources */,
 				CE1EDE90203B64D100E58426 /* BaseService.swift in Sources */,

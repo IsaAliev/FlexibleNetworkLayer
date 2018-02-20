@@ -45,7 +45,7 @@ class BaseService: Service {
     }
     
     func processSuccessString(_ string: String) {
-        
+
     }
     
     func processError(_ error: ErrorRepresentable) {

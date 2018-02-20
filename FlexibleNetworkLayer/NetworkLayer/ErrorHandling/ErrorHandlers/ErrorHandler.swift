@@ -13,5 +13,5 @@ protocol ErrorHandler {
     var errorCodeGetter: ErrorCodeGetter { get set }
     var errorMessageGetter: ErrorMessageGetter { get set }
     
-    func handleErrorResponse(_ response: ResponseRepresentable, completion: (Result) -> ())
+    func handleErrorResponse(_ response: ResponseRepresentable, completion: (ErrorRepresentable) -> ())
 }
