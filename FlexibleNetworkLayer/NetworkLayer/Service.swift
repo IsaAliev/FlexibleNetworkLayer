@@ -9,8 +9,10 @@
 import Foundation
 
 protocol Service {
+    associatedtype ResultTypeValue: Decodable
+    
     var request: RequestRepresentable? { get set }
-    var responseHandler: ResponseHandler? { get set }
+    var responseHandler: HTTPResponseHandler<ResultTypeValue>? { get set }
   
     func sendRequest()
 }

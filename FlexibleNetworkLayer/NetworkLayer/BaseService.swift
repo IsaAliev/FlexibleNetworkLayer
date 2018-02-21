@@ -8,9 +8,11 @@
 
 import Foundation
 
-class BaseService: Service {
-    var responseHandler: ResponseHandler? = HTTPResponseHandler()
-    var request: RequestRepresentable? = BaseRequest()
+class BaseService<T: Decodable>: Service {
+    typealias ResultTypeValue = T
+
+    var responseHandler: HTTPResponseHandler<T>? = HTTPResponseHandler<T>()
+    var request: RequestRepresentable?
 
     var session: URLSession {
         let session = URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: nil)
@@ -27,12 +29,10 @@ class BaseService: Service {
             
             self?.responseHandler?.handleResponse(response, completion: { [weak self] (result) in
                 switch result {
-                case let .JSONValue(json):
-                    self?.processSuccessJSON(json)
+                case let .Value(model):
+                    self?.processSuccess(model)
                 case let .Error(error):
                     self?.processError(error)
-                case let .StringValue(string):
-                    self?.processSuccessString(string)
                 default:
                     break
                 }
@@ -40,8 +40,8 @@ class BaseService: Service {
         }.resume()
     }
     
-    func processSuccessJSON(_ json: JSON) {
-        print(json)
+    func processSuccess(_ model: T) {
+        print(model)
     }
     
     func processSuccessString(_ string: String) {
@@ -49,7 +49,7 @@ class BaseService: Service {
     }
     
     func processError(_ error: ErrorRepresentable) {
-        
+        print(error)
     }
 }
 

@@ -8,13 +8,16 @@
 
 import Foundation
 
-class HTTPResponseHandler: ResponseHandler {
+class HTTPResponseHandler<T: Decodable>: ResponseHandler {
+    typealias ResultValueType = T
+    
     var jsonSerializer = JSONSerializer()
     var stringSerializer = StringSerializer()
     var errorHandler: ErrorHandler = BaseErrorHandler()
     var successResponseChecker: SuccessResponseChecker = BaseSuccessResponseChecker()
+    var decodingProcessor = DecodableModelDecodingProcessor<T>()
     
-    func handleResponse(_ response: ResponseRepresentable, completion: (Result) -> ()) {
+    func handleResponse(_ response: ResponseRepresentable, completion: (Result<T>) -> ()) {
         if successResponseChecker.isSuccessResponse(response) {
             processSuccessResponse(response, completion: completion)
         } else {
@@ -22,35 +25,20 @@ class HTTPResponseHandler: ResponseHandler {
         }
     }
     
-    private func processSuccessResponse(_ response: ResponseRepresentable, completion: (Result) -> ()) {
+    private func processSuccessResponse(_ response: ResponseRepresentable, completion: (Result<T>) -> ()) {
         guard let data = response.data else {
             return
         }
-        
-//        let users = try? CodableModelDecodingProcessor<UsersList>().decodeFrom(data)
-//        print(users)
-//        
-        
-        let serializedJSON = try? jsonSerializer.serialize(data)
-        
-        if let json = serializedJSON {
-            completion(.JSONValue(json))
-            
-            return
-        }
-        
-        let serializedString = try? stringSerializer.serialize(data)
 
-        guard let string = serializedString else {
+        guard let result = try? decodingProcessor.decodeFrom(data) else {
             completion(.None)
-            
             return
         }
         
-        completion(.StringValue(string))
+        completion(.Value(result))
     }
     
-    private func processFailureResponse(_ response: ResponseRepresentable, completion: (Result) -> ()) {
+    private func processFailureResponse(_ response: ResponseRepresentable, completion: (Result<T>) -> ()) {
         errorHandler.handleErrorResponse(response) { (error) in
             completion(.Error(error))
         }

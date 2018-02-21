@@ -10,12 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let service = BaseService()
+    let service = BaseService<Wall>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let responseHandler = HTTPResponseHandler()
+        service.request = GETWallRequest()
+        let responseHandler = HTTPResponseHandler<Wall>()
         responseHandler.successResponseChecker = VKAPISuccessChecker()
         responseHandler.errorHandler.errorMessageGetter = VKAPIErrorMessageGetter()
         responseHandler.errorHandler.errorCodeGetter = VKAPIErrorCodeGetter()
