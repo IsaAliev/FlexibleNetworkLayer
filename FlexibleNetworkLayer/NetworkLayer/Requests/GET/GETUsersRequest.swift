@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct GETUsersRequest: RequestRepresentable {
+struct GETUsersRequest: HTTPGetRequest {
     var path: String = "https://api.vk.com/method/users.get"
-    var httpMethod: HTTPMethod = .GET
     var parameters: JSON? = ["user_ids": "212100336","fields":"online,screen_name,education" , "v": "5.73"]
+    var headerFields: [String: String]?
 }

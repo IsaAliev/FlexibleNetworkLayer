@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct GETWallRequest: RequestRepresentable {
+struct GETWallRequest: HTTPGetRequest {
     var path: String = "https://api.vk.com/method/wall.get"
-    var httpMethod: HTTPMethod = .GET
-    var parameters: JSON? = ["owner_id": "-86529522","count": 20]
+    var parameters: JSON? = ["owner_id": "-86529522","count": 20, "v": "5.73"]
+    var headerFields: [String: String]? 
 }

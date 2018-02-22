@@ -11,8 +11,8 @@ import Foundation
 class HTTPResponseHandler<T: Decodable>: ResponseHandler {
     typealias ResultValueType = T
     
-    var jsonSerializer = JSONSerializer()
-    var stringSerializer = StringSerializer()
+    private let jsonSerializer = JSONSerializer()
+    private let stringSerializer = StringSerializer()
     var errorHandler: ErrorHandler = BaseErrorHandler()
     var successResponseChecker: SuccessResponseChecker = BaseSuccessResponseChecker()
     var decodingProcessor = DecodableModelDecodingProcessor<T>()

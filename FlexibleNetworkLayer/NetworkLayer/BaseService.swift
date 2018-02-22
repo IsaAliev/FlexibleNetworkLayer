@@ -8,20 +8,32 @@
 
 import Foundation
 
-class BaseService<T: Decodable>: Service {
+final class BaseService<T: Decodable>: Service {
     typealias ResultTypeValue = T
-
+    
     var responseHandler: HTTPResponseHandler<T>? = HTTPResponseHandler<T>()
-    var request: RequestRepresentable?
+    var request: HTTPRequestRepresentable?
 
-    var session: URLSession {
+    var successHandler: SuccessHandlerBlock?
+    var failureHandler: FailureHandlerBlock?
+    
+    var requestPreparator: RequestPreparator? = BaseRequestPreparator()
+    
+    private var session: URLSession {
         let session = URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: nil)
+        
         return session
     }
     
-    func sendRequest() {
-        guard let urlRequest = request?.urlRequest() else {
-            return
+    func sendRequest() -> BaseService<T>? {
+        guard var request = request else {
+            return nil
+        }
+        
+        requestPreparator?.prepareRequest(&request)
+        
+        guard let urlRequest = request.urlRequest() else {
+            return nil
         }
 
         session.dataTask(with: urlRequest) { [weak self] (data, response, error) in
@@ -38,18 +50,30 @@ class BaseService<T: Decodable>: Service {
                 }
             })
         }.resume()
+        
+        return self
     }
     
-    func processSuccess(_ model: T) {
-        print(model)
+    func onSucces(_ success: @escaping SuccessHandlerBlock) -> BaseService<T> {
+        successHandler = success
+        
+        return self
     }
     
-    func processSuccessString(_ string: String) {
+    func onFailure(_ failure: @escaping FailureHandlerBlock) -> BaseService<T> {
+        failureHandler = failure
+        
+        return self
+    }
+    
+    private func processSuccess(_ model: T) {
+        successHandler?(model)
+        successHandler = nil
+    }
 
-    }
-    
-    func processError(_ error: ErrorRepresentable) {
-        print(error)
+    private func processError(_ error: ErrorRepresentable) {
+        failureHandler?(error)
+        failureHandler = nil
     }
 }
 

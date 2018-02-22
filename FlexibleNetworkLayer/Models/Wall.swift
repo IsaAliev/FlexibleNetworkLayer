@@ -12,6 +12,6 @@ struct Wall: Decodable {
     var items: [WallItem]
     
     enum CodingKeys: String, CodingKey {
-        case items = "response"
+        case items = "items"
     }
 }
