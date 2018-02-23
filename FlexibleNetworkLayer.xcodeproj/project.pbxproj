@@ -189,8 +189,7 @@
 			children = (
 				CE542E91203CAAA5009B44A8 /* Models */,
 				CE1EDE80203B623800E58426 /* NetworkLayer */,
-				CEF80D3220403323007751D2 /* BasicWallAPI.swift */,
-				CEF80D3020403266007751D2 /* WallGettable.swift */,
+				CEF80D342040678F007751D2 /* WallAPI */,
 				CE1EDE6E203B622E00E58426 /* AppDelegate.swift */,
 				CE1EDE70203B622E00E58426 /* ViewController.swift */,
 				CE1EDE72203B622E00E58426 /* Main.storyboard */,
@@ -343,6 +342,15 @@
 				CE1EDE8F203B64D100E58426 /* BaseService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		CEF80D342040678F007751D2 /* WallAPI */ = {
+			isa = PBXGroup;
+			children = (
+				CEF80D3220403323007751D2 /* BasicWallAPI.swift */,
+				CEF80D3020403266007751D2 /* WallGettable.swift */,
+			);
+			path = WallAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
