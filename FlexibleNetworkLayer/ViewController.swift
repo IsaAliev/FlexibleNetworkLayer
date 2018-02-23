@@ -9,8 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    let service: WallAPI = BasicWallAPI()
     let ghReposService: ReposGettable = ReposAPI()
     
     override func viewDidLoad() {
@@ -20,11 +18,6 @@ class ViewController: UIViewController {
             print(repos)
         }
     }
-    
-    @IBOutlet weak var textField: UITextField!
 
-    @IBAction func postAction() {
-        service.postWall(with: textField.text!)
-    }
 }
 

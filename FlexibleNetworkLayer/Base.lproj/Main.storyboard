@@ -17,34 +17,9 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SMc-gj-ZRY">
-                                <rect key="frame" x="16" y="328.5" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcj-JC-LDa">
-                                <rect key="frame" x="167" y="366" width="40" height="30"/>
-                                <state key="normal" title="POST"/>
-                                <connections>
-                                    <action selector="postAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="bg9-N4-KdU"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="SMc-gj-ZRY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1P1-LK-yp7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SMc-gj-ZRY" secondAttribute="trailing" constant="16" id="7Ue-ml-dRA"/>
-                            <constraint firstItem="SMc-gj-ZRY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="I6z-tC-jth"/>
-                            <constraint firstItem="mcj-JC-LDa" firstAttribute="top" secondItem="SMc-gj-ZRY" secondAttribute="bottom" constant="7.5" id="n4W-zX-md9"/>
-                            <constraint firstItem="mcj-JC-LDa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="sgf-Tp-Q66"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="textField" destination="SMc-gj-ZRY" id="TbM-tk-4AX"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
