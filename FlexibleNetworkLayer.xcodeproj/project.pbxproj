@@ -57,6 +57,12 @@
 		CEF80D3320403323007751D2 /* BasicWallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3220403323007751D2 /* BasicWallAPI.swift */; };
 		CEF80D3720408D9F007751D2 /* APIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3620408D9F007751D2 /* APIBuilder.swift */; };
 		CEF80D3920408E03007751D2 /* VKAPIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3820408E03007751D2 /* VKAPIBuilder.swift */; };
+		CEF80D3B20409578007751D2 /* GETReposRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3A20409578007751D2 /* GETReposRequest.swift */; };
+		CEF80D3D204095B5007751D2 /* GitHubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3C204095B5007751D2 /* GitHubRepo.swift */; };
+		CEF80D3F20409663007751D2 /* GitHubAPIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3E20409663007751D2 /* GitHubAPIBuilder.swift */; };
+		CEF80D42204096C0007751D2 /* GitHubReposAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D41204096C0007751D2 /* GitHubReposAPI.swift */; };
+		CEF80D44204096D5007751D2 /* ReposGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D43204096D5007751D2 /* ReposGettable.swift */; };
+		CEF80D4620409708007751D2 /* ReposAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D4520409708007751D2 /* ReposAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +118,12 @@
 		CEF80D3220403323007751D2 /* BasicWallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicWallAPI.swift; sourceTree = "<group>"; };
 		CEF80D3620408D9F007751D2 /* APIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBuilder.swift; sourceTree = "<group>"; };
 		CEF80D3820408E03007751D2 /* VKAPIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPIBuilder.swift; sourceTree = "<group>"; };
+		CEF80D3A20409578007751D2 /* GETReposRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GETReposRequest.swift; sourceTree = "<group>"; };
+		CEF80D3C204095B5007751D2 /* GitHubRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepo.swift; sourceTree = "<group>"; };
+		CEF80D3E20409663007751D2 /* GitHubAPIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIBuilder.swift; sourceTree = "<group>"; };
+		CEF80D41204096C0007751D2 /* GitHubReposAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubReposAPI.swift; sourceTree = "<group>"; };
+		CEF80D43204096D5007751D2 /* ReposGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposGettable.swift; sourceTree = "<group>"; };
+		CEF80D4520409708007751D2 /* ReposAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +143,7 @@
 				432055EF203DD41800ECBA0D /* HTTPGetRequest.swift */,
 				CE1EDE95203B6C6B00E58426 /* GETUsersRequest.swift */,
 				CE542E9A203CBC19009B44A8 /* GETWallRequest.swift */,
+				CEF80D3A20409578007751D2 /* GETReposRequest.swift */,
 			);
 			path = GET;
 			sourceTree = "<group>";
@@ -191,6 +204,7 @@
 		CE1EDE6D203B622E00E58426 /* FlexibleNetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				CEF80D40204096AB007751D2 /* GHReposAPI */,
 				CE542E91203CAAA5009B44A8 /* Models */,
 				CE1EDE80203B623800E58426 /* NetworkLayer */,
 				CEF80D342040678F007751D2 /* WallAPI */,
@@ -270,6 +284,7 @@
 				CE542E94203CB2B6009B44A8 /* UsersList.swift */,
 				CE542E9C203CBCDE009B44A8 /* Wall.swift */,
 				CE542E9E203CBCF2009B44A8 /* WallItem.swift */,
+				CEF80D3C204095B5007751D2 /* GitHubRepo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -363,8 +378,19 @@
 			children = (
 				CEF80D3620408D9F007751D2 /* APIBuilder.swift */,
 				CEF80D3820408E03007751D2 /* VKAPIBuilder.swift */,
+				CEF80D3E20409663007751D2 /* GitHubAPIBuilder.swift */,
 			);
 			path = APIBuilders;
+			sourceTree = "<group>";
+		};
+		CEF80D40204096AB007751D2 /* GHReposAPI */ = {
+			isa = PBXGroup;
+			children = (
+				CEF80D41204096C0007751D2 /* GitHubReposAPI.swift */,
+				CEF80D43204096D5007751D2 /* ReposGettable.swift */,
+				CEF80D4520409708007751D2 /* ReposAPI.swift */,
+			);
+			path = GHReposAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,6 +469,7 @@
 				4366F6A2203C629000A06CC7 /* VKAPISuccesChecker.swift in Sources */,
 				4366F693203C560200A06CC7 /* ErrorCodeHandler.swift in Sources */,
 				CE1EDE71203B622E00E58426 /* ViewController.swift in Sources */,
+				CEF80D4620409708007751D2 /* ReposAPI.swift in Sources */,
 				CE1EDE8C203B640B00E58426 /* Service.swift in Sources */,
 				CE1EDE84203B62A500E58426 /* ErrorRepresentable.swift in Sources */,
 				4366F689203C161E00A06CC7 /* JSONSerializer.swift in Sources */,
@@ -457,12 +484,14 @@
 				4366F695203C562200A06CC7 /* BaseErrorHandler.swift in Sources */,
 				4366F697203C565600A06CC7 /* BaseErrorCodeHandler.swift in Sources */,
 				4366F686203C15D200A06CC7 /* Serializer.swift in Sources */,
+				CEF80D3B20409578007751D2 /* GETReposRequest.swift in Sources */,
 				CE542E95203CB2B6009B44A8 /* UsersList.swift in Sources */,
 				CE542E98203CB386009B44A8 /* DecodingProcessor.swift in Sources */,
 				CE1EDE94203B69FC00E58426 /* HTTPResponseHandler.swift in Sources */,
 				CE542E9B203CBC19009B44A8 /* GETWallRequest.swift in Sources */,
 				CE1EDE86203B62CF00E58426 /* ResponseRepresentable.swift in Sources */,
 				4366F6A6203C68BE00A06CC7 /* ErrorCodeGetter.swift in Sources */,
+				CEF80D42204096C0007751D2 /* GitHubReposAPI.swift in Sources */,
 				CE1EDE6F203B622E00E58426 /* AppDelegate.swift in Sources */,
 				CEF80D3120403266007751D2 /* WallGettable.swift in Sources */,
 				CE1EDE8E203B649300E58426 /* ErrorHandler.swift in Sources */,
@@ -472,7 +501,9 @@
 				4366F6A8203C68E600A06CC7 /* VKAPIErrorCodeGetter.swift in Sources */,
 				432055F0203DD41800ECBA0D /* HTTPGetRequest.swift in Sources */,
 				CEF80D3720408D9F007751D2 /* APIBuilder.swift in Sources */,
+				CEF80D44204096D5007751D2 /* ReposGettable.swift in Sources */,
 				CE542E90203CA948009B44A8 /* ModelDecodingProcessor.swift in Sources */,
+				CEF80D3F20409663007751D2 /* GitHubAPIBuilder.swift in Sources */,
 				4366F6AA203C6D0D00A06CC7 /* BaseErrorCodeGetter.swift in Sources */,
 				CE1EDE82203B626100E58426 /* HTTPRequestRepresentable.swift in Sources */,
 				CE1EDE90203B64D100E58426 /* BaseService.swift in Sources */,
@@ -482,6 +513,7 @@
 				CEF80D3920408E03007751D2 /* VKAPIBuilder.swift in Sources */,
 				CE1EDE96203B6C6B00E58426 /* GETUsersRequest.swift in Sources */,
 				CE542E9F203CBCF2009B44A8 /* WallItem.swift in Sources */,
+				CEF80D3D204095B5007751D2 /* GitHubRepo.swift in Sources */,
 				CE1EDE8A203B635300E58426 /* ResponseHandler.swift in Sources */,
 				CE1EDE98203B6E0B00E58426 /* BaseError.swift in Sources */,
 				4366F6A4203C63A600A06CC7 /* VKAPIErrorMessageGetter.swift in Sources */,

@@ -11,16 +11,13 @@ import UIKit
 class ViewController: UIViewController {
 
     let service: WallAPI = BasicWallAPI()
+    let ghReposService: ReposGettable = ReposAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        service.getWallItemsCount { (count) in
-            print("Wall items count is \(count)")
-        }
-        
-        service.getWall { (wall) in
-            print(wall)
+        ghReposService.getRepos { (repos) in
+            print(repos)
         }
     }
     
