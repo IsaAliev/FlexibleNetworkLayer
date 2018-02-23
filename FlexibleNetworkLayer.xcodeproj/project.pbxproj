@@ -55,6 +55,8 @@
 		CEF80D2B20403115007751D2 /* HTTPPOSTRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D2A20403115007751D2 /* HTTPPOSTRequest.swift */; };
 		CEF80D3120403266007751D2 /* WallGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3020403266007751D2 /* WallGettable.swift */; };
 		CEF80D3320403323007751D2 /* BasicWallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3220403323007751D2 /* BasicWallAPI.swift */; };
+		CEF80D3720408D9F007751D2 /* APIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3620408D9F007751D2 /* APIBuilder.swift */; };
+		CEF80D3920408E03007751D2 /* VKAPIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3820408E03007751D2 /* VKAPIBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +110,8 @@
 		CEF80D2A20403115007751D2 /* HTTPPOSTRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPPOSTRequest.swift; sourceTree = "<group>"; };
 		CEF80D3020403266007751D2 /* WallGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallGettable.swift; sourceTree = "<group>"; };
 		CEF80D3220403323007751D2 /* BasicWallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicWallAPI.swift; sourceTree = "<group>"; };
+		CEF80D3620408D9F007751D2 /* APIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBuilder.swift; sourceTree = "<group>"; };
+		CEF80D3820408E03007751D2 /* VKAPIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPIBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +207,7 @@
 		CE1EDE80203B623800E58426 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				CEF80D3520408D86007751D2 /* APIBuilders */,
 				CEF80D2F204031AE007751D2 /* Services */,
 				CEF80D2E2040319C007751D2 /* RequestPreparators */,
 				CEF80D2D20403174007751D2 /* Responses */,
@@ -353,6 +358,15 @@
 			path = WallAPI;
 			sourceTree = "<group>";
 		};
+		CEF80D3520408D86007751D2 /* APIBuilders */ = {
+			isa = PBXGroup;
+			children = (
+				CEF80D3620408D9F007751D2 /* APIBuilder.swift */,
+				CEF80D3820408E03007751D2 /* VKAPIBuilder.swift */,
+			);
+			path = APIBuilders;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -457,6 +471,7 @@
 				CEF80D2020400B02007751D2 /* StringDecodingProcessor.swift in Sources */,
 				4366F6A8203C68E600A06CC7 /* VKAPIErrorCodeGetter.swift in Sources */,
 				432055F0203DD41800ECBA0D /* HTTPGetRequest.swift in Sources */,
+				CEF80D3720408D9F007751D2 /* APIBuilder.swift in Sources */,
 				CE542E90203CA948009B44A8 /* ModelDecodingProcessor.swift in Sources */,
 				4366F6AA203C6D0D00A06CC7 /* BaseErrorCodeGetter.swift in Sources */,
 				CE1EDE82203B626100E58426 /* HTTPRequestRepresentable.swift in Sources */,
@@ -464,6 +479,7 @@
 				CEF80D2B20403115007751D2 /* HTTPPOSTRequest.swift in Sources */,
 				CE1EDE92203B69A700E58426 /* BaseResponse.swift in Sources */,
 				CE542EA2203F45FC009B44A8 /* POSTWallRequest.swift in Sources */,
+				CEF80D3920408E03007751D2 /* VKAPIBuilder.swift in Sources */,
 				CE1EDE96203B6C6B00E58426 /* GETUsersRequest.swift in Sources */,
 				CE542E9F203CBCF2009B44A8 /* WallItem.swift in Sources */,
 				CE1EDE8A203B635300E58426 /* ResponseHandler.swift in Sources */,

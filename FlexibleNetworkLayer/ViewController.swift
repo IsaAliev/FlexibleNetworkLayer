@@ -18,6 +18,10 @@ class ViewController: UIViewController {
         service.getWallItemsCount { (count) in
             print("Wall items count is \(count)")
         }
+        
+        service.getWall { (wall) in
+            print(wall)
+        }
     }
     
     @IBOutlet weak var textField: UITextField!
