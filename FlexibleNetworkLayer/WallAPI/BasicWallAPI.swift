@@ -8,27 +8,54 @@
 
 import Foundation
 
-struct BasicWallAPI: WallAPI {
-    let getService = BaseService<Wall>()
-    let postService = BaseService<[String: [String: Int]]>()
-    
-    func getWall(completion: @escaping (Wall) -> ()) {
-        getService.request = GETWallRequest()
+class BasicWallAPI: WallAPI {
+    lazy var getWallService: BaseService<Wall> = {
+        let service = BaseService<Wall>()
+        service.request = GETWallRequest()
         
         let responseHandler = HTTPResponseHandler<Wall>()
         responseHandler.nestedModelGetter = ResponseModelGetter.wallResponse
         responseHandler.successResponseChecker = VKAPISuccessChecker()
         
-        getService.responseHandler = responseHandler
+        service.responseHandler = responseHandler
         
-        _ = getService.sendRequest()?.onSucces({ (wall) in
+        return service
+    }()
+    
+    lazy var postService: BaseService<[String: [String: Int]]> = {
+        let service = BaseService<[String: [String: Int]]>()
+        
+        return service
+    }()
+    
+    lazy var getWallItemsCountService: BaseService<Int> = {
+        let service = BaseService<Int>()
+        service.request = GETWallRequest()
+        
+        let responseHandler = HTTPResponseHandler<Int>()
+        responseHandler.nestedModelGetter = ResponseModelGetter.wallResponseCount
+        responseHandler.successResponseChecker = VKAPISuccessChecker()
+        responseHandler.decodingProcessor = IntDecodingProcessor()
+        
+        service.responseHandler = responseHandler
+        
+        return service
+    }()
+    
+    func getWall(completion: @escaping (Wall) -> ()) {
+        _ = getWallService.sendRequest()?.onSucces({ (wall) in
             completion(wall)
+        })
+    }
+    
+    func getWallItemsCount(completion: @escaping (Int) -> ()) {
+        _ = getWallItemsCountService.sendRequest()?.onSucces({ (count) in
+            completion(count)
         })
     }
     
     func postWall(with message: String) {
         postService.request = POSTWallRequest(message: message)
-        
         _ = postService.sendRequest()
     }
 }

@@ -10,7 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let service: WallPostable = BasicWallAPI()
+    let service: WallAPI = BasicWallAPI()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        service.getWallItemsCount { (count) in
+            print("Wall items count is \(count)")
+        }
+    }
     
     @IBOutlet weak var textField: UITextField!
 
