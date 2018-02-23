@@ -16,7 +16,7 @@ class ReposAPI: ReposGettable {
     }()
     
     func getRepos(completion: @escaping ([GitHubRepo]) -> ()) {
-        getReposService.sendRequest()?.onSucces({ (repos) in
+        _ = getReposService.sendRequest()?.onSucces({ (repos) in
             completion(repos)
         })
     }

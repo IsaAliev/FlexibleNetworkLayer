@@ -60,7 +60,6 @@
 		CEF80D3B20409578007751D2 /* GETReposRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3A20409578007751D2 /* GETReposRequest.swift */; };
 		CEF80D3D204095B5007751D2 /* GitHubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3C204095B5007751D2 /* GitHubRepo.swift */; };
 		CEF80D3F20409663007751D2 /* GitHubAPIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3E20409663007751D2 /* GitHubAPIBuilder.swift */; };
-		CEF80D42204096C0007751D2 /* GitHubReposAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D41204096C0007751D2 /* GitHubReposAPI.swift */; };
 		CEF80D44204096D5007751D2 /* ReposGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D43204096D5007751D2 /* ReposGettable.swift */; };
 		CEF80D4620409708007751D2 /* ReposAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D4520409708007751D2 /* ReposAPI.swift */; };
 /* End PBXBuildFile section */
@@ -121,7 +120,6 @@
 		CEF80D3A20409578007751D2 /* GETReposRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GETReposRequest.swift; sourceTree = "<group>"; };
 		CEF80D3C204095B5007751D2 /* GitHubRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepo.swift; sourceTree = "<group>"; };
 		CEF80D3E20409663007751D2 /* GitHubAPIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIBuilder.swift; sourceTree = "<group>"; };
-		CEF80D41204096C0007751D2 /* GitHubReposAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubReposAPI.swift; sourceTree = "<group>"; };
 		CEF80D43204096D5007751D2 /* ReposGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposGettable.swift; sourceTree = "<group>"; };
 		CEF80D4520409708007751D2 /* ReposAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -386,7 +384,6 @@
 		CEF80D40204096AB007751D2 /* GHReposAPI */ = {
 			isa = PBXGroup;
 			children = (
-				CEF80D41204096C0007751D2 /* GitHubReposAPI.swift */,
 				CEF80D43204096D5007751D2 /* ReposGettable.swift */,
 				CEF80D4520409708007751D2 /* ReposAPI.swift */,
 			);
@@ -491,7 +488,6 @@
 				CE542E9B203CBC19009B44A8 /* GETWallRequest.swift in Sources */,
 				CE1EDE86203B62CF00E58426 /* ResponseRepresentable.swift in Sources */,
 				4366F6A6203C68BE00A06CC7 /* ErrorCodeGetter.swift in Sources */,
-				CEF80D42204096C0007751D2 /* GitHubReposAPI.swift in Sources */,
 				CE1EDE6F203B622E00E58426 /* AppDelegate.swift in Sources */,
 				CEF80D3120403266007751D2 /* WallGettable.swift in Sources */,
 				CE1EDE8E203B649300E58426 /* ErrorHandler.swift in Sources */,
