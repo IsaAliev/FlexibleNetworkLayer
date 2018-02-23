@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct GETUsersRequest: HTTPGetRequest {
+struct GETUsersRequest: HTTPGETRequest {
     var path: String = "https://api.vk.com/method/users.get"
-    var parameters: JSON? = ["user_ids": "212100336","fields":"online,screen_name,education" , "v": "5.73"]
+    var parameters: JSON? = ["user_ids": "212100336","fields":"online,screen_name,education" ]
     var headerFields: [String: String]?
 }

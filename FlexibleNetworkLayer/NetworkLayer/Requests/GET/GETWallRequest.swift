@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct GETWallRequest: HTTPGetRequest {
+struct GETWallRequest: HTTPGETRequest {
     var path: String = "https://api.vk.com/method/wall.get"
-    var parameters: JSON? = ["owner_id": "-86529522","count": 20, "v": "5.73"]
+    var parameters: JSON? = ["owner_id": "-86529522","count": 20]
     var headerFields: [String: String]? 
 }

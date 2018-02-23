@@ -1,18 +1,18 @@
 //
-//  HTTPGetRequest.swift
+//  HTTPPOSTRequest.swift
 //  FlexibleNetworkLayer
 //
-//  Created by Isa Aliev on 21.02.2018.
+//  Created by Isa Aliev on 23.02.18.
 //  Copyright © 2018 IA. All rights reserved.
 //
 
 import Foundation
 
-protocol HTTPGETRequest: HTTPRequestRepresentable { }
+protocol HTTPPOSTRequest: HTTPRequestRepresentable { }
 
-extension HTTPGETRequest {
+extension HTTPPOSTRequest {
     var httpMethod: HTTPMethod {
-        return .GET
+        return .POST
     }
     
     var bodyString: String? {
