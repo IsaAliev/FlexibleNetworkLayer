@@ -44,6 +44,9 @@ extension HTTPRequestRepresentable {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = self.httpMethod.rawValue
         urlRequest.allHTTPHeaderFields = headerFields
+        if let body = bodyString {
+            urlRequest.httpBody = body.data(using: .utf8)
+        }
         
         return urlRequest
     }

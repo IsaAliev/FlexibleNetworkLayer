@@ -12,6 +12,12 @@ struct VKAPISuccessChecker: SuccessResponseChecker {
     let jsonSerializer = JSONSerializer()
     
     func isSuccessResponse(_ response: ResponseRepresentable) -> Bool {
+        guard let httpResponse = response.response as? HTTPURLResponse else {
+            return false
+        }
+        
+        let isSuccesAccordingToStatusCode = Range(uncheckedBounds: (200, 300)).contains(httpResponse.statusCode)
+        
         guard let data = response.data else {
             return false
         }
@@ -20,6 +26,6 @@ struct VKAPISuccessChecker: SuccessResponseChecker {
             return false
         }
         
-        return !json.keys.contains("error")
+        return isSuccesAccordingToStatusCode && !json.keys.contains("error")
     }
 }

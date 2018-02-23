@@ -36,12 +36,12 @@ class HTTPResponseHandler<T: Decodable>: ResponseHandler {
         guard var data = response.data else {
             return
         }
-        
+
         if let nestedModelGetter = nestedModelGetter {
             if let escapedModelJSON = try? nestedModelGetter.getFrom(data) {
 
                 if isResponseRepresentSimpleType {
-                    if let result = resultUsingNestedModelGetter(from: data) {
+                    if let result = simpleTypeUsingNestedModelGetter(from: data) {
                         completion(.Value(result))
                         
                         return
@@ -73,7 +73,7 @@ class HTTPResponseHandler<T: Decodable>: ResponseHandler {
                 }
             }
         }
-        
+
         guard let result = try? decodingProcessor.decodeFrom(data) else {
             completion(.None)
             
@@ -83,7 +83,7 @@ class HTTPResponseHandler<T: Decodable>: ResponseHandler {
         completion(.Value(result))
     }
     
-    private func resultUsingNestedModelGetter(from data: Data) -> T? {
+    private func simpleTypeUsingNestedModelGetter(from data: Data) -> T? {
         let getter = nestedModelGetter!
         
         guard let escapedModelJSON = try? getter.getFrom(data) else {
