@@ -8,12 +8,20 @@
 
 import Foundation
 
-protocol HTTPGetRequest: HTTPRequestRepresentable {
-    
-}
+protocol HTTPGetRequest: HTTPRequestRepresentable { }
 
 extension HTTPGetRequest {
     var httpMethod: HTTPMethod {
         return .GET
+    }
+    
+    var bodyString: String? {
+        get {
+            return nil
+        }
+        
+        set {
+            
+        }
     }
 }

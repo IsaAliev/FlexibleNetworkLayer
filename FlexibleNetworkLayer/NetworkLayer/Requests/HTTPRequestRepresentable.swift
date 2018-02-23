@@ -7,7 +7,6 @@
 //
 
 import Foundation
-//978dca0fdeff538760892951032737bd3df7695ccbec52f32dfc99918de068027c5684b08912bf41fed61
 
 enum HTTPMethod: String {
     case GET
@@ -21,6 +20,7 @@ protocol HTTPRequestRepresentable {
     var httpMethod: HTTPMethod { get }
     var parameters: JSON? { get set }
     var headerFields: [String: String]? { get set }
+    var bodyString: String? { get set }
 }
 
 extension HTTPRequestRepresentable {

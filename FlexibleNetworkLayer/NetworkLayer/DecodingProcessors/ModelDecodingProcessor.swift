@@ -1,5 +1,5 @@
 //
-//  DecodableModelDecodingProcessor.swift
+//  ModelDecodingProcessor.swift
 //  FlexibleNetworkLayer
 //
 //  Created by Isa Aliev on 20.02.18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DecodableModelDecodingProcessor<T: Decodable>: DecodingProcessor {
+class ModelDecodingProcessor<T: Decodable>: DecodingProcessor {
     typealias DecodingResult = T
     
     func decodeFrom(_ data: Data) throws -> T {

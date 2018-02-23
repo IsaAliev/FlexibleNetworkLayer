@@ -10,6 +10,7 @@ import Foundation
 
 struct BaseRequestPreparator: RequestPreparator {
     func prepareRequest(_ request: inout HTTPRequestRepresentable) {
-        request.parameters?["access_token"] = "978dca0fdeff538760892951032737bd3df7695ccbec52f32dfc99918de068027c5684b08912bf41fed61"
+        request.parameters?["access_token"] = "677595de1fdfcba20c371cccb0eb6f1cbc9457373788e7cf2674b1568510dea250b74c9f9e65eece1b321"
+        request.parameters?["v"] = "5.73"
     }
 }
