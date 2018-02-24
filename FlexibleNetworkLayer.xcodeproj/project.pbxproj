@@ -62,6 +62,10 @@
 		CEF80D3F20409663007751D2 /* GitHubAPIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3E20409663007751D2 /* GitHubAPIBuilder.swift */; };
 		CEF80D44204096D5007751D2 /* ReposGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D43204096D5007751D2 /* ReposGettable.swift */; };
 		CEF80D4620409708007751D2 /* ReposAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D4520409708007751D2 /* ReposAPI.swift */; };
+		CEF80D482040A124007751D2 /* GitHubUsersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D472040A124007751D2 /* GitHubUsersAPI.swift */; };
+		CEF80D4A2040A23D007751D2 /* BasicGHUsersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D492040A23D007751D2 /* BasicGHUsersAPI.swift */; };
+		CEF80D4C2040A29D007751D2 /* GETUsersLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D4B2040A29D007751D2 /* GETUsersLocationRequest.swift */; };
+		CEF80D4E2040A36C007751D2 /* GitHubNestedModelGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D4D2040A36C007751D2 /* GitHubNestedModelGetter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +126,10 @@
 		CEF80D3E20409663007751D2 /* GitHubAPIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIBuilder.swift; sourceTree = "<group>"; };
 		CEF80D43204096D5007751D2 /* ReposGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposGettable.swift; sourceTree = "<group>"; };
 		CEF80D4520409708007751D2 /* ReposAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposAPI.swift; sourceTree = "<group>"; };
+		CEF80D472040A124007751D2 /* GitHubUsersAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUsersAPI.swift; sourceTree = "<group>"; };
+		CEF80D492040A23D007751D2 /* BasicGHUsersAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGHUsersAPI.swift; sourceTree = "<group>"; };
+		CEF80D4B2040A29D007751D2 /* GETUsersLocationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GETUsersLocationRequest.swift; sourceTree = "<group>"; };
+		CEF80D4D2040A36C007751D2 /* GitHubNestedModelGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubNestedModelGetter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +150,7 @@
 				CE1EDE95203B6C6B00E58426 /* GETUsersRequest.swift */,
 				CE542E9A203CBC19009B44A8 /* GETWallRequest.swift */,
 				CEF80D3A20409578007751D2 /* GETReposRequest.swift */,
+				CEF80D4B2040A29D007751D2 /* GETUsersLocationRequest.swift */,
 			);
 			path = GET;
 			sourceTree = "<group>";
@@ -322,6 +331,7 @@
 			children = (
 				CE542EA3203F4CE4009B44A8 /* NestedModelGetter.swift */,
 				CE542EA6203F51E8009B44A8 /* ResponseModelGetter.swift */,
+				CEF80D4D2040A36C007751D2 /* GitHubNestedModelGetter.swift */,
 			);
 			path = NestedModelGetters;
 			sourceTree = "<group>";
@@ -386,6 +396,8 @@
 			children = (
 				CEF80D43204096D5007751D2 /* ReposGettable.swift */,
 				CEF80D4520409708007751D2 /* ReposAPI.swift */,
+				CEF80D472040A124007751D2 /* GitHubUsersAPI.swift */,
+				CEF80D492040A23D007751D2 /* BasicGHUsersAPI.swift */,
 			);
 			path = GHReposAPI;
 			sourceTree = "<group>";
@@ -469,6 +481,7 @@
 				CEF80D4620409708007751D2 /* ReposAPI.swift in Sources */,
 				CE1EDE8C203B640B00E58426 /* Service.swift in Sources */,
 				CE1EDE84203B62A500E58426 /* ErrorRepresentable.swift in Sources */,
+				CEF80D482040A124007751D2 /* GitHubUsersAPI.swift in Sources */,
 				4366F689203C161E00A06CC7 /* JSONSerializer.swift in Sources */,
 				CEF80D2220400B4C007751D2 /* IntDecodingProcessor.swift in Sources */,
 				432055EB203DAC5300ECBA0D /* BaseRequestPreparator.swift in Sources */,
@@ -478,10 +491,12 @@
 				4366F69D203C603900A06CC7 /* SuccessResponseChecker.swift in Sources */,
 				4366F699203C595F00A06CC7 /* ErrorMessageGetter.swift in Sources */,
 				CE542EA7203F51E8009B44A8 /* ResponseModelGetter.swift in Sources */,
+				CEF80D4C2040A29D007751D2 /* GETUsersLocationRequest.swift in Sources */,
 				4366F695203C562200A06CC7 /* BaseErrorHandler.swift in Sources */,
 				4366F697203C565600A06CC7 /* BaseErrorCodeHandler.swift in Sources */,
 				4366F686203C15D200A06CC7 /* Serializer.swift in Sources */,
 				CEF80D3B20409578007751D2 /* GETReposRequest.swift in Sources */,
+				CEF80D4A2040A23D007751D2 /* BasicGHUsersAPI.swift in Sources */,
 				CE542E95203CB2B6009B44A8 /* UsersList.swift in Sources */,
 				CE542E98203CB386009B44A8 /* DecodingProcessor.swift in Sources */,
 				CE1EDE94203B69FC00E58426 /* HTTPResponseHandler.swift in Sources */,
@@ -501,6 +516,7 @@
 				CE542E90203CA948009B44A8 /* ModelDecodingProcessor.swift in Sources */,
 				CEF80D3F20409663007751D2 /* GitHubAPIBuilder.swift in Sources */,
 				4366F6AA203C6D0D00A06CC7 /* BaseErrorCodeGetter.swift in Sources */,
+				CEF80D4E2040A36C007751D2 /* GitHubNestedModelGetter.swift in Sources */,
 				CE1EDE82203B626100E58426 /* HTTPRequestRepresentable.swift in Sources */,
 				CE1EDE90203B64D100E58426 /* BaseService.swift in Sources */,
 				CEF80D2B20403115007751D2 /* HTTPPOSTRequest.swift in Sources */,

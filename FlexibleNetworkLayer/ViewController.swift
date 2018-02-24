@@ -9,13 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let ghReposService: ReposGettable = ReposAPI()
+    let ghReposAPI: ReposGettable = ReposAPI()
+    let ghUserAPI: GitHubUsersAPI = BasicGHUsersAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ghReposService.getRepos { (repos) in
+        ghReposAPI.getRepos { (repos) in
             print(repos)
+        }
+        
+        ghUserAPI.getLocationFor("IsaAliev") { (city) in
+            print(city)
         }
     }
 
