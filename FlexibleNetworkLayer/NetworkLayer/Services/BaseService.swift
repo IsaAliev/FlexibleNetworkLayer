@@ -48,9 +48,6 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: Service {
                     self?.processSuccess(model)
                 case let .Error(error):
                     self?.processError(error)
-                default:
-                    self?.processNone()
-                    break
                 }
             })
         }.resume()
@@ -72,13 +69,6 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: Service {
         return self
     }
     
-    @discardableResult
-    func onNone(_ none: @escaping () -> ()) -> BaseService<T, E> {
-        noneHandler = none
-        
-        return self
-    }
-    
     private func processSuccess(_ model: T) {
         successHandler?(model)
         successHandler = nil
@@ -87,11 +77,6 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: Service {
     private func processError(_ error: E) {
         failureHandler?(error)
         failureHandler = nil
-    }
-    
-    private func processNone() {
-        noneHandler?()
-        noneHandler = nil
     }
 }
 
