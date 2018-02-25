@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ErrorHandler {
-    var errorCodeHandler: ErrorCodeHandler { get set }
+    var errorTypeHandler: ErrorTypeHandler { get set }
     
     func handleError(_ error: ErrorRepresentable)
 }

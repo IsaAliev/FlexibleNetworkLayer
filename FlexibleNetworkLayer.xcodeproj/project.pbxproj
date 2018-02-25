@@ -12,9 +12,9 @@
 		432055F0203DD41800ECBA0D /* HTTPGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432055EF203DD41800ECBA0D /* HTTPGetRequest.swift */; };
 		4366F686203C15D200A06CC7 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F685203C15D200A06CC7 /* Serializer.swift */; };
 		4366F689203C161E00A06CC7 /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F688203C161E00A06CC7 /* JSONSerializer.swift */; };
-		4366F693203C560200A06CC7 /* ErrorCodeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F692203C560200A06CC7 /* ErrorCodeHandler.swift */; };
+		4366F693203C560200A06CC7 /* ErrorTypeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F692203C560200A06CC7 /* ErrorTypeHandler.swift */; };
 		4366F695203C562200A06CC7 /* BaseErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F694203C562200A06CC7 /* BaseErrorHandler.swift */; };
-		4366F697203C565600A06CC7 /* BaseErrorCodeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F696203C565600A06CC7 /* BaseErrorCodeHandler.swift */; };
+		4366F697203C565600A06CC7 /* BaseErrorTypeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F696203C565600A06CC7 /* BaseErrorTypeHandler.swift */; };
 		4366F69D203C603900A06CC7 /* SuccessResponseChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F69C203C603900A06CC7 /* SuccessResponseChecker.swift */; };
 		4366F69F203C607900A06CC7 /* BaseSuccessResponseChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F69E203C607900A06CC7 /* BaseSuccessResponseChecker.swift */; };
 		4366F6A2203C629000A06CC7 /* VKAPISuccesChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F6A1203C629000A06CC7 /* VKAPISuccesChecker.swift */; };
@@ -61,9 +61,9 @@
 		432055EF203DD41800ECBA0D /* HTTPGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPGetRequest.swift; sourceTree = "<group>"; };
 		4366F685203C15D200A06CC7 /* Serializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
 		4366F688203C161E00A06CC7 /* JSONSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
-		4366F692203C560200A06CC7 /* ErrorCodeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCodeHandler.swift; sourceTree = "<group>"; };
+		4366F692203C560200A06CC7 /* ErrorTypeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTypeHandler.swift; sourceTree = "<group>"; };
 		4366F694203C562200A06CC7 /* BaseErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorHandler.swift; sourceTree = "<group>"; };
-		4366F696203C565600A06CC7 /* BaseErrorCodeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorCodeHandler.swift; sourceTree = "<group>"; };
+		4366F696203C565600A06CC7 /* BaseErrorTypeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorTypeHandler.swift; sourceTree = "<group>"; };
 		4366F69C203C603900A06CC7 /* SuccessResponseChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponseChecker.swift; sourceTree = "<group>"; };
 		4366F69E203C607900A06CC7 /* BaseSuccessResponseChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSuccessResponseChecker.swift; sourceTree = "<group>"; };
 		4366F6A1203C629000A06CC7 /* VKAPISuccesChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPISuccesChecker.swift; sourceTree = "<group>"; };
@@ -227,8 +227,8 @@
 		CE542E8C203C981C009B44A8 /* ErrorCodeHandlers */ = {
 			isa = PBXGroup;
 			children = (
-				4366F692203C560200A06CC7 /* ErrorCodeHandler.swift */,
-				4366F696203C565600A06CC7 /* BaseErrorCodeHandler.swift */,
+				4366F692203C560200A06CC7 /* ErrorTypeHandler.swift */,
+				4366F696203C565600A06CC7 /* BaseErrorTypeHandler.swift */,
 			);
 			path = ErrorCodeHandlers;
 			sourceTree = "<group>";
@@ -412,7 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4366F6A2203C629000A06CC7 /* VKAPISuccesChecker.swift in Sources */,
-				4366F693203C560200A06CC7 /* ErrorCodeHandler.swift in Sources */,
+				4366F693203C560200A06CC7 /* ErrorTypeHandler.swift in Sources */,
 				CE1EDE71203B622E00E58426 /* ViewController.swift in Sources */,
 				CE1EDE8C203B640B00E58426 /* Service.swift in Sources */,
 				CE35C8ED20432F1300AEC0D7 /* VKAPIError.swift in Sources */,
@@ -427,7 +427,7 @@
 				4366F69D203C603900A06CC7 /* SuccessResponseChecker.swift in Sources */,
 				CE542EA7203F51E8009B44A8 /* ResponseModelGetter.swift in Sources */,
 				4366F695203C562200A06CC7 /* BaseErrorHandler.swift in Sources */,
-				4366F697203C565600A06CC7 /* BaseErrorCodeHandler.swift in Sources */,
+				4366F697203C565600A06CC7 /* BaseErrorTypeHandler.swift in Sources */,
 				4366F686203C15D200A06CC7 /* Serializer.swift in Sources */,
 				CE542E95203CB2B6009B44A8 /* UsersList.swift in Sources */,
 				CE542E98203CB386009B44A8 /* DecodingProcessor.swift in Sources */,

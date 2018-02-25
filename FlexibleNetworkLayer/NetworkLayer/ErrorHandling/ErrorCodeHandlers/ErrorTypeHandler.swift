@@ -1,5 +1,5 @@
 //
-//  ErrorCodeHandler.swift
+//  ErrorTypeHandler.swift
 //  FlexibleNetworkLayer
 //
 //  Created by Isa Aliev on 20.02.2018.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ErrorCodeHandler {
-    func handleError(with code: Int)
+protocol ErrorTypeHandler {
+    func handleError(with type: ErrorType)
 }
