@@ -18,6 +18,10 @@ struct VKAPIError: ErrorRepresentable {
     var message: String?
     var type: ErrorType = VKAPIErrorType.unknownError
     
+    init(_ type: ErrorType) {
+        self.type = type
+    }
+    
     init(_ response: ResponseRepresentable) {
         guard let data = response.data else {
             return

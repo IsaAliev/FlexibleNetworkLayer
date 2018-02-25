@@ -17,6 +17,10 @@ struct BaseError: ErrorRepresentable {
     var message: String?
     var type: ErrorType
     
+    init(_ type: ErrorType) {
+        self.type = type
+    }
+    
     init(_ response: ResponseRepresentable) {
         errorCode = 0
         message = ""

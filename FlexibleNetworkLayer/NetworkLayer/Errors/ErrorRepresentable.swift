@@ -13,6 +13,7 @@ protocol ErrorRepresentable {
     var errorCode: Int? { get set }
     var type: ErrorType { get set }
     
+    init(_ type: ErrorType)
     init(_ response: ResponseRepresentable)
 }
 

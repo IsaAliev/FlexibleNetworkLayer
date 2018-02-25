@@ -48,26 +48,26 @@ class HTTPResponseHandler<T: Decodable, E: ErrorRepresentable>: ResponseHandler 
                         return
                     }
                     
-                    //model processing error
+                    completion(Result.Error(E(ProcessingErrorType.modelProcessingError)))
                     
                     return
                 } else {
                     guard let model = escapedModelJSON[nestedModelGetter.escapedModelKey] else {
-                        //model processing error
+                        completion(Result.Error(E(ProcessingErrorType.modelProcessingError)))
                         
                         return
                     }
                     
                     if model is JSON {
                         guard let serializedData = try? JSONSerialization.data(withJSONObject: model, options: [])  else {
-                            //model processing error
+                            completion(Result.Error(E(ProcessingErrorType.modelProcessingError)))
                             
                             return
                         }
                         
                         data = serializedData
                     } else {
-                        //model processing error
+                        completion(Result.Error(E(ProcessingErrorType.modelProcessingError)))
                         
                         return
                     }
@@ -76,7 +76,7 @@ class HTTPResponseHandler<T: Decodable, E: ErrorRepresentable>: ResponseHandler 
         }
 
         guard let result = try? decodingProcessor.decodeFrom(data) else {
-            //model processing error
+            completion(Result.Error(E(ProcessingErrorType.modelProcessingError)))
             
             return
         }
@@ -106,10 +106,3 @@ class HTTPResponseHandler<T: Decodable, E: ErrorRepresentable>: ResponseHandler 
     }
     
 }
-
-
-
-
-
-
-
