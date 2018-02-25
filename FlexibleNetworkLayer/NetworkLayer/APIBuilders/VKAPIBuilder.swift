@@ -10,18 +10,17 @@ import Foundation
 
 class VKAPIBuilder<T: Decodable>: APIBuilder {
     typealias ResultType = T
+    typealias ErrorType = VKAPIError
     
     func buildAPI(for request: HTTPRequestRepresentable,
              decodingProcessor: ModelDecodingProcessor<T>? = nil,
-             nestedModelGetter: NestedModelGetter? = nil) -> BaseService<T> {
-        let service = BaseService<T>()
+             nestedModelGetter: NestedModelGetter? = nil) -> BaseService<T, VKAPIError> {
+        let service = BaseService<T, VKAPIError>()
         service.request = request
         
-        let responseHandler = HTTPResponseHandler<T>()
+        let responseHandler = HTTPResponseHandler<T, VKAPIError>()
         responseHandler.nestedModelGetter = nestedModelGetter
         responseHandler.successResponseChecker = VKAPISuccessChecker()
-        responseHandler.errorHandler.errorMessageGetter = VKAPIErrorMessageGetter()
-        responseHandler.errorHandler.errorCodeGetter = VKAPIErrorCodeGetter()
         
         if let decodingProcessor = decodingProcessor {
             responseHandler.decodingProcessor = decodingProcessor
@@ -32,3 +31,4 @@ class VKAPIBuilder<T: Decodable>: APIBuilder {
         return service
     }
 }
+

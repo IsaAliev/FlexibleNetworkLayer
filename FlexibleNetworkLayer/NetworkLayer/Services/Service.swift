@@ -9,13 +9,14 @@
 import Foundation
 
 protocol Service {
-    associatedtype ResultTypeValue: Decodable
+    associatedtype ResultType: Decodable
+    associatedtype ErrorType: ErrorRepresentable
     
-    typealias SuccessHandlerBlock = (ResultTypeValue) -> ()
-    typealias FailureHandlerBlock = (ErrorRepresentable) -> ()
+    typealias SuccessHandlerBlock = (ResultType) -> ()
+    typealias FailureHandlerBlock = (ErrorType) -> ()
     
     var request: HTTPRequestRepresentable? { get set }
-    var responseHandler: HTTPResponseHandler<ResultTypeValue>? { get set }
+    var responseHandler: HTTPResponseHandler<ResultType, ErrorType>? { get set }
   
     func sendRequest() -> Self?
 }

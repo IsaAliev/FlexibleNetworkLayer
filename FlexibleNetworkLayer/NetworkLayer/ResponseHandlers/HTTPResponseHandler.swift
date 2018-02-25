@@ -8,8 +8,9 @@
 
 import Foundation
 
-class HTTPResponseHandler<T: Decodable>: ResponseHandler {
-    typealias ResultValueType = T
+class HTTPResponseHandler<T: Decodable, E: ErrorRepresentable>: ResponseHandler {
+    typealias ResultType = T
+    typealias ErrorType = E
     
     private var isResponseRepresentSimpleType: Bool {
         return
@@ -24,7 +25,7 @@ class HTTPResponseHandler<T: Decodable>: ResponseHandler {
     var decodingProcessor = ModelDecodingProcessor<T>()
     var nestedModelGetter: NestedModelGetter?
     
-    func handleResponse(_ response: ResponseRepresentable, completion: (Result<T>) -> ()) {
+    func handleResponse(_ response: ResponseRepresentable, completion: (Result<T, E>) -> ()) {
         if successResponseChecker.isSuccessResponse(response) {
             processSuccessResponse(response, completion: completion)
         } else {
@@ -32,7 +33,7 @@ class HTTPResponseHandler<T: Decodable>: ResponseHandler {
         }
     }
     
-    private func processSuccessResponse(_ response: ResponseRepresentable, completion: (Result<T>) -> ()) {
+    private func processSuccessResponse(_ response: ResponseRepresentable, completion: (Result<T, E>) -> ()) {
         guard var data = response.data else {
             return
         }
@@ -47,26 +48,26 @@ class HTTPResponseHandler<T: Decodable>: ResponseHandler {
                         return
                     }
                     
-                    completion(.None)
+                    //model processing error
                     
                     return
                 } else {
                     guard let model = escapedModelJSON[nestedModelGetter.escapedModelKey] else {
-                        completion(.None)
+                        //model processing error
                         
                         return
                     }
                     
                     if model is JSON {
                         guard let serializedData = try? JSONSerialization.data(withJSONObject: model, options: [])  else {
-                            completion(.None)
+                            //model processing error
                             
                             return
                         }
                         
                         data = serializedData
                     } else {
-                        completion(.None)
+                        //model processing error
                         
                         return
                     }
@@ -75,7 +76,7 @@ class HTTPResponseHandler<T: Decodable>: ResponseHandler {
         }
 
         guard let result = try? decodingProcessor.decodeFrom(data) else {
-            completion(.None)
+            //model processing error
             
             return
         }
@@ -98,9 +99,17 @@ class HTTPResponseHandler<T: Decodable>: ResponseHandler {
     }
     
     
-    private func processFailureResponse(_ response: ResponseRepresentable, completion: (Result<T>) -> ()) {
-        errorHandler.handleErrorResponse(response) { (error) in
-            completion(.Error(error))
-        }
+    private func processFailureResponse(_ response: ResponseRepresentable, completion: (Result<T, E>) -> ()) {
+        let error = E(response)
+        completion(.Error(error))
+        errorHandler.handleError(error)
     }
+    
 }
+
+
+
+
+
+
+

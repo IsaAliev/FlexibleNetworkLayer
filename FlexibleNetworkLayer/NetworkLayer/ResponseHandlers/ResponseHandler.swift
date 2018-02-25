@@ -10,14 +10,14 @@ import Foundation
 
 typealias JSON = [String: Any]
 
-enum Result<T> {
+enum Result<T, E> {
     case Value(T)
-    case Error(ErrorRepresentable)
-    case None
+    case Error(E)
 }
 
 protocol ResponseHandler {
-    associatedtype ResultValueType
+    associatedtype ResultType
+    associatedtype ErrorType
     
-    func handleResponse(_ response: ResponseRepresentable, completion: (Result<ResultValueType>) -> ())
+    func handleResponse(_ response: ResponseRepresentable, completion: (Result<ResultType, ErrorType>) -> ())
 }

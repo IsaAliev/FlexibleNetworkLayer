@@ -9,20 +9,20 @@
 import Foundation
 
 class BasicWallAPI: WallAPI {
-    lazy var getWallService: BaseService<Wall> = {
+    lazy var getWallService: BaseService<Wall, VKAPIError> = {
         let apiBuilder = VKAPIBuilder<Wall>()
         
         return apiBuilder.buildAPI(for: GETWallRequest(),
                                     nestedModelGetter: ResponseModelGetter.wallResponse)
     }()
     
-    lazy var postService: BaseService<[String: [String: Int]]> = {
-        let service = BaseService<[String: [String: Int]]>()
+    lazy var postService: BaseService<[String: [String: Int]], VKAPIError> = {
+        let service = BaseService<[String: [String: Int]], VKAPIError>()
         
         return service
     }()
     
-    lazy var getWallItemsCountService: BaseService<Int> = {
+    lazy var getWallItemsCountService: BaseService<Int, VKAPIError> = {
         let apiBuilder = VKAPIBuilder<Int>()
         
         return apiBuilder.buildAPI(for: GETWallRequest(), decodingProcessor: IntDecodingProcessor(), nestedModelGetter: ResponseModelGetter.wallResponseCount)
@@ -45,3 +45,4 @@ class BasicWallAPI: WallAPI {
         _ = postService.sendRequest()
     }
 }
+

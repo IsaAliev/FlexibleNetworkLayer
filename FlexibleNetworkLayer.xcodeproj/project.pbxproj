@@ -15,15 +15,9 @@
 		4366F693203C560200A06CC7 /* ErrorCodeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F692203C560200A06CC7 /* ErrorCodeHandler.swift */; };
 		4366F695203C562200A06CC7 /* BaseErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F694203C562200A06CC7 /* BaseErrorHandler.swift */; };
 		4366F697203C565600A06CC7 /* BaseErrorCodeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F696203C565600A06CC7 /* BaseErrorCodeHandler.swift */; };
-		4366F699203C595F00A06CC7 /* ErrorMessageGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F698203C595F00A06CC7 /* ErrorMessageGetter.swift */; };
-		4366F69B203C599200A06CC7 /* BaseErrorMessageGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F69A203C599200A06CC7 /* BaseErrorMessageGetter.swift */; };
 		4366F69D203C603900A06CC7 /* SuccessResponseChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F69C203C603900A06CC7 /* SuccessResponseChecker.swift */; };
 		4366F69F203C607900A06CC7 /* BaseSuccessResponseChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F69E203C607900A06CC7 /* BaseSuccessResponseChecker.swift */; };
 		4366F6A2203C629000A06CC7 /* VKAPISuccesChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F6A1203C629000A06CC7 /* VKAPISuccesChecker.swift */; };
-		4366F6A4203C63A600A06CC7 /* VKAPIErrorMessageGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F6A3203C63A600A06CC7 /* VKAPIErrorMessageGetter.swift */; };
-		4366F6A6203C68BE00A06CC7 /* ErrorCodeGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F6A5203C68BE00A06CC7 /* ErrorCodeGetter.swift */; };
-		4366F6A8203C68E600A06CC7 /* VKAPIErrorCodeGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F6A7203C68E600A06CC7 /* VKAPIErrorCodeGetter.swift */; };
-		4366F6AA203C6D0D00A06CC7 /* BaseErrorCodeGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366F6A9203C6D0D00A06CC7 /* BaseErrorCodeGetter.swift */; };
 		CE1EDE6F203B622E00E58426 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE6E203B622E00E58426 /* AppDelegate.swift */; };
 		CE1EDE71203B622E00E58426 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE70203B622E00E58426 /* ViewController.swift */; };
 		CE1EDE74203B622E00E58426 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1EDE72203B622E00E58426 /* Main.storyboard */; };
@@ -40,6 +34,7 @@
 		CE1EDE94203B69FC00E58426 /* HTTPResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE93203B69FC00E58426 /* HTTPResponseHandler.swift */; };
 		CE1EDE96203B6C6B00E58426 /* GETUsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE95203B6C6B00E58426 /* GETUsersRequest.swift */; };
 		CE1EDE98203B6E0B00E58426 /* BaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE97203B6E0B00E58426 /* BaseError.swift */; };
+		CE35C8ED20432F1300AEC0D7 /* VKAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8EC20432F1300AEC0D7 /* VKAPIError.swift */; };
 		CE542E90203CA948009B44A8 /* ModelDecodingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE542E8F203CA948009B44A8 /* ModelDecodingProcessor.swift */; };
 		CE542E93203CAAB1009B44A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE542E92203CAAB1009B44A8 /* User.swift */; };
 		CE542E95203CB2B6009B44A8 /* UsersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE542E94203CB2B6009B44A8 /* UsersList.swift */; };
@@ -68,15 +63,9 @@
 		4366F692203C560200A06CC7 /* ErrorCodeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCodeHandler.swift; sourceTree = "<group>"; };
 		4366F694203C562200A06CC7 /* BaseErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorHandler.swift; sourceTree = "<group>"; };
 		4366F696203C565600A06CC7 /* BaseErrorCodeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorCodeHandler.swift; sourceTree = "<group>"; };
-		4366F698203C595F00A06CC7 /* ErrorMessageGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageGetter.swift; sourceTree = "<group>"; };
-		4366F69A203C599200A06CC7 /* BaseErrorMessageGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorMessageGetter.swift; sourceTree = "<group>"; };
 		4366F69C203C603900A06CC7 /* SuccessResponseChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponseChecker.swift; sourceTree = "<group>"; };
 		4366F69E203C607900A06CC7 /* BaseSuccessResponseChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSuccessResponseChecker.swift; sourceTree = "<group>"; };
 		4366F6A1203C629000A06CC7 /* VKAPISuccesChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPISuccesChecker.swift; sourceTree = "<group>"; };
-		4366F6A3203C63A600A06CC7 /* VKAPIErrorMessageGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPIErrorMessageGetter.swift; sourceTree = "<group>"; };
-		4366F6A5203C68BE00A06CC7 /* ErrorCodeGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCodeGetter.swift; sourceTree = "<group>"; };
-		4366F6A7203C68E600A06CC7 /* VKAPIErrorCodeGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPIErrorCodeGetter.swift; sourceTree = "<group>"; };
-		4366F6A9203C6D0D00A06CC7 /* BaseErrorCodeGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorCodeGetter.swift; sourceTree = "<group>"; };
 		CE1EDE6B203B622E00E58426 /* FlexibleNetworkLayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlexibleNetworkLayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1EDE6E203B622E00E58426 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE1EDE70203B622E00E58426 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +84,7 @@
 		CE1EDE93203B69FC00E58426 /* HTTPResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponseHandler.swift; sourceTree = "<group>"; };
 		CE1EDE95203B6C6B00E58426 /* GETUsersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GETUsersRequest.swift; sourceTree = "<group>"; };
 		CE1EDE97203B6E0B00E58426 /* BaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseError.swift; sourceTree = "<group>"; };
+		CE35C8EC20432F1300AEC0D7 /* VKAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPIError.swift; sourceTree = "<group>"; };
 		CE542E8F203CA948009B44A8 /* ModelDecodingProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDecodingProcessor.swift; sourceTree = "<group>"; };
 		CE542E92203CAAB1009B44A8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CE542E94203CB2B6009B44A8 /* UsersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersList.swift; sourceTree = "<group>"; };
@@ -226,8 +216,6 @@
 		CE542E8B203C980B009B44A8 /* ErrorHandling */ = {
 			isa = PBXGroup;
 			children = (
-				CE542E8E203C9851009B44A8 /* ErrorCodeGetters */,
-				CE542E8D203C9838009B44A8 /* ErrorMessageGetters */,
 				CE542E8C203C981C009B44A8 /* ErrorCodeHandlers */,
 				4366F691203C55F100A06CC7 /* ErrorHandlers */,
 			);
@@ -241,26 +229,6 @@
 				4366F696203C565600A06CC7 /* BaseErrorCodeHandler.swift */,
 			);
 			path = ErrorCodeHandlers;
-			sourceTree = "<group>";
-		};
-		CE542E8D203C9838009B44A8 /* ErrorMessageGetters */ = {
-			isa = PBXGroup;
-			children = (
-				4366F698203C595F00A06CC7 /* ErrorMessageGetter.swift */,
-				4366F69A203C599200A06CC7 /* BaseErrorMessageGetter.swift */,
-				4366F6A3203C63A600A06CC7 /* VKAPIErrorMessageGetter.swift */,
-			);
-			path = ErrorMessageGetters;
-			sourceTree = "<group>";
-		};
-		CE542E8E203C9851009B44A8 /* ErrorCodeGetters */ = {
-			isa = PBXGroup;
-			children = (
-				4366F6A5203C68BE00A06CC7 /* ErrorCodeGetter.swift */,
-				4366F6A7203C68E600A06CC7 /* VKAPIErrorCodeGetter.swift */,
-				4366F6A9203C6D0D00A06CC7 /* BaseErrorCodeGetter.swift */,
-			);
-			path = ErrorCodeGetters;
 			sourceTree = "<group>";
 		};
 		CE542E91203CAAA5009B44A8 /* Models */ = {
@@ -318,6 +286,7 @@
 			children = (
 				CE1EDE83203B62A500E58426 /* ErrorRepresentable.swift */,
 				CE1EDE97203B6E0B00E58426 /* BaseError.swift */,
+				CE35C8EC20432F1300AEC0D7 /* VKAPIError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -439,11 +408,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4366F69B203C599200A06CC7 /* BaseErrorMessageGetter.swift in Sources */,
 				4366F6A2203C629000A06CC7 /* VKAPISuccesChecker.swift in Sources */,
 				4366F693203C560200A06CC7 /* ErrorCodeHandler.swift in Sources */,
 				CE1EDE71203B622E00E58426 /* ViewController.swift in Sources */,
 				CE1EDE8C203B640B00E58426 /* Service.swift in Sources */,
+				CE35C8ED20432F1300AEC0D7 /* VKAPIError.swift in Sources */,
 				CE1EDE84203B62A500E58426 /* ErrorRepresentable.swift in Sources */,
 				4366F689203C161E00A06CC7 /* JSONSerializer.swift in Sources */,
 				CEF80D2220400B4C007751D2 /* IntDecodingProcessor.swift in Sources */,
@@ -452,7 +421,6 @@
 				4366F69F203C607900A06CC7 /* BaseSuccessResponseChecker.swift in Sources */,
 				CE542E93203CAAB1009B44A8 /* User.swift in Sources */,
 				4366F69D203C603900A06CC7 /* SuccessResponseChecker.swift in Sources */,
-				4366F699203C595F00A06CC7 /* ErrorMessageGetter.swift in Sources */,
 				CE542EA7203F51E8009B44A8 /* ResponseModelGetter.swift in Sources */,
 				4366F695203C562200A06CC7 /* BaseErrorHandler.swift in Sources */,
 				4366F697203C565600A06CC7 /* BaseErrorCodeHandler.swift in Sources */,
@@ -462,18 +430,15 @@
 				CE1EDE94203B69FC00E58426 /* HTTPResponseHandler.swift in Sources */,
 				CE542E9B203CBC19009B44A8 /* GETWallRequest.swift in Sources */,
 				CE1EDE86203B62CF00E58426 /* ResponseRepresentable.swift in Sources */,
-				4366F6A6203C68BE00A06CC7 /* ErrorCodeGetter.swift in Sources */,
 				CE1EDE6F203B622E00E58426 /* AppDelegate.swift in Sources */,
 				CEF80D3120403266007751D2 /* WallGettable.swift in Sources */,
 				CE1EDE8E203B649300E58426 /* ErrorHandler.swift in Sources */,
 				CE542EA4203F4CE4009B44A8 /* NestedModelGetter.swift in Sources */,
 				CEF80D3320403323007751D2 /* BasicWallAPI.swift in Sources */,
 				CEF80D2020400B02007751D2 /* StringDecodingProcessor.swift in Sources */,
-				4366F6A8203C68E600A06CC7 /* VKAPIErrorCodeGetter.swift in Sources */,
 				432055F0203DD41800ECBA0D /* HTTPGetRequest.swift in Sources */,
 				CEF80D3720408D9F007751D2 /* APIBuilder.swift in Sources */,
 				CE542E90203CA948009B44A8 /* ModelDecodingProcessor.swift in Sources */,
-				4366F6AA203C6D0D00A06CC7 /* BaseErrorCodeGetter.swift in Sources */,
 				CE1EDE82203B626100E58426 /* HTTPRequestRepresentable.swift in Sources */,
 				CE1EDE90203B64D100E58426 /* BaseService.swift in Sources */,
 				CEF80D2B20403115007751D2 /* HTTPPOSTRequest.swift in Sources */,
@@ -484,7 +449,6 @@
 				CE542E9F203CBCF2009B44A8 /* WallItem.swift in Sources */,
 				CE1EDE8A203B635300E58426 /* ResponseHandler.swift in Sources */,
 				CE1EDE98203B6E0B00E58426 /* BaseError.swift in Sources */,
-				4366F6A4203C63A600A06CC7 /* VKAPIErrorMessageGetter.swift in Sources */,
 				CE542E9D203CBCDE009B44A8 /* Wall.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,10 +8,11 @@
 
 import Foundation
 
-final class BaseService<T: Decodable>: Service {
-    typealias ResultTypeValue = T
+final class BaseService<T: Decodable, E: ErrorRepresentable>: Service {
+    typealias ResultType = T
+    typealias ErrorType = E
     
-    var responseHandler: HTTPResponseHandler<T>? = HTTPResponseHandler<T>()
+    var responseHandler: HTTPResponseHandler<T, E>? = HTTPResponseHandler<T, E>()
     var request: HTTPRequestRepresentable?
 
     var successHandler: SuccessHandlerBlock?
@@ -26,7 +27,8 @@ final class BaseService<T: Decodable>: Service {
         return session
     }
     
-    func sendRequest() -> BaseService<T>? {
+    @discardableResult
+    func sendRequest() -> BaseService<T, E>? {
         guard var request = request else {
             return nil
         }
@@ -56,19 +58,22 @@ final class BaseService<T: Decodable>: Service {
         return self
     }
     
-    func onSucces(_ success: @escaping SuccessHandlerBlock) -> BaseService<T> {
+    @discardableResult
+    func onSucces(_ success: @escaping SuccessHandlerBlock) -> BaseService<T, E> {
         successHandler = success
         
         return self
     }
     
-    func onFailure(_ failure: @escaping FailureHandlerBlock) -> BaseService<T> {
+    @discardableResult
+    func onFailure(_ failure: @escaping FailureHandlerBlock) -> BaseService<T, E> {
         failureHandler = failure
         
         return self
     }
     
-    func onNone(_ none: @escaping () -> ()) -> BaseService<T> {
+    @discardableResult
+    func onNone(_ none: @escaping () -> ()) -> BaseService<T, E> {
         noneHandler = none
         
         return self
@@ -79,7 +84,7 @@ final class BaseService<T: Decodable>: Service {
         successHandler = nil
     }
 
-    private func processError(_ error: ErrorRepresentable) {
+    private func processError(_ error: E) {
         failureHandler?(error)
         failureHandler = nil
     }

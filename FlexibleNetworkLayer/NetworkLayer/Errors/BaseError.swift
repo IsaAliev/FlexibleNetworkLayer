@@ -8,7 +8,18 @@
 
 import Foundation
 
+enum BaseErrorType: String, ErrorType {
+    case fatalError
+}
+
 struct BaseError: ErrorRepresentable {
-    var errorCode: Int
+    var errorCode: Int?
     var message: String?
+    var type: ErrorType
+    
+    init(_ response: ResponseRepresentable) {
+        errorCode = 0
+        message = ""
+        type = BaseErrorType.fatalError
+    }
 }

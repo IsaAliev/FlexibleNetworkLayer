@@ -9,17 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    let service: WallAPI = BasicWallAPI()
+    let getWallService: WallGettable = BasicWallAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        service.getWallItemsCount { (count) in
-            print("Wall items count is \(count)")
-        }
-        
-        service.getWall { (wall) in
+
+        getWallService.getWall { (wall) in
             print(wall)
         }
     }
@@ -27,7 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
 
     @IBAction func postAction() {
-        service.postWall(with: textField.text!)
+        
     }
 }
 

@@ -10,8 +10,6 @@ import Foundation
 
 protocol ErrorHandler {
     var errorCodeHandler: ErrorCodeHandler { get set }
-    var errorCodeGetter: ErrorCodeGetter { get set }
-    var errorMessageGetter: ErrorMessageGetter { get set }
     
-    func handleErrorResponse(_ response: ResponseRepresentable, completion: (ErrorRepresentable) -> ())
+    func handleError(_ error: ErrorRepresentable)
 }

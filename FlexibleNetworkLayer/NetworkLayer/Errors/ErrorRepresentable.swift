@@ -10,5 +10,12 @@ import Foundation
 
 protocol ErrorRepresentable {
     var message: String? { get set }
-    var errorCode: Int { get set }
+    var errorCode: Int? { get set }
+    var type: ErrorType { get set }
+    
+    init(_ response: ResponseRepresentable)
+}
+
+protocol ErrorType {
+    var rawValue: String { get }
 }
