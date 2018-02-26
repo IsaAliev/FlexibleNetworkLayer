@@ -40,37 +40,25 @@ class HTTPResponseHandler<T: Decodable, E: ErrorRepresentable>: ResponseHandler 
 
         if let nestedModelGetter = nestedModelGetter {
             if let escapedModelJSON = try? nestedModelGetter.getFrom(data) {
-
                 if isResponseRepresentSimpleType {
                     if let result = simpleTypeUsingNestedModelGetter(from: data) {
                         completion(.Value(result))
-                        
                         return
                     }
                     
                     completion(Result.Error(E(ProcessingErrorType.modelProcessingError)))
-                    
                     return
+                    
                 } else {
-                    guard let model = escapedModelJSON[nestedModelGetter.escapedModelKey] else {
-                        completion(Result.Error(E(ProcessingErrorType.modelProcessingError)))
-                        
-                        return
+                    guard let model = escapedModelJSON[nestedModelGetter.escapedModelKey],
+                        model is JSON,
+                        let serializedData = try? JSONSerialization.data(withJSONObject: model, options: [])
+                        else {
+                            completion(Result.Error(E(ProcessingErrorType.modelProcessingError)))
+                            return
                     }
                     
-                    if model is JSON {
-                        guard let serializedData = try? JSONSerialization.data(withJSONObject: model, options: [])  else {
-                            completion(Result.Error(E(ProcessingErrorType.modelProcessingError)))
-                            
-                            return
-                        }
-                        
-                        data = serializedData
-                    } else {
-                        completion(Result.Error(E(ProcessingErrorType.modelProcessingError)))
-                        
-                        return
-                    }
+                    data = serializedData
                 }
             }
         }
@@ -104,5 +92,4 @@ class HTTPResponseHandler<T: Decodable, E: ErrorRepresentable>: ResponseHandler 
         completion(.Error(error))
         errorHandler.handleError(error)
     }
-    
 }
