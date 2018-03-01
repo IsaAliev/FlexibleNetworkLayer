@@ -16,7 +16,7 @@ enum HTTPMethod: String {
 }
 
 protocol HTTPRequestRepresentable {
-    var path: String { get set }
+    var path: String { get }
     var httpMethod: HTTPMethod { get }
     var parameters: JSON? { get set }
     var headerFields: [String: String]? { get set }
@@ -28,7 +28,7 @@ extension HTTPRequestRepresentable {
         guard var urlComponents = URLComponents(string: self.path) else {
             return nil
         }
-        
+
         if let parametersJSON = self.parameters {
             var queryItems = [URLQueryItem]()
             for (key, value) in parametersJSON {
@@ -36,18 +36,18 @@ extension HTTPRequestRepresentable {
             }
             urlComponents.queryItems = queryItems
         }
-        
+
         guard let url = urlComponents.url else {
             return nil
         }
-        
+
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = self.httpMethod.rawValue
         urlRequest.allHTTPHeaderFields = headerFields
         if let body = bodyString {
             urlRequest.httpBody = body.data(using: .utf8)
         }
-        
+
         return urlRequest
     }
 }

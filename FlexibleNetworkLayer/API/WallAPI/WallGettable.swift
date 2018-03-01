@@ -9,8 +9,8 @@
 import Foundation
 
 protocol WallGettable {
-    func getWall(completion: @escaping (Wall) -> ())
-    func getWallItemsCount(completion: @escaping (Int) -> ())
+    func getWall(fromOwnerWith id: String, completion: @escaping (Wall) -> ())
+    func getWallItemsCount(fromOwnerWith id: String, completion: @escaping (Int) -> ())
 }
 
 protocol WallPostable {

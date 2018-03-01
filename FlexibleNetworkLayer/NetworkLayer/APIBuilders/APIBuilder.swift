@@ -9,10 +9,9 @@
 import Foundation
 
 protocol APIBuilder {
-    associatedtype ResultType: Decodable
     associatedtype ErrorType: ErrorRepresentable
     
-    func buildAPI(for request: HTTPRequestRepresentable,
-    decodingProcessor: ModelDecodingProcessor<ResultType>?,
-    nestedModelGetter: NestedModelGetter?) -> BaseService<ResultType, ErrorType>
+    func buildAPI<T: Decodable>(_ responseType: T.Type, request: HTTPRequestRepresentable?,
+                                decodingProcessor: ModelDecodingProcessor<T>?,
+                                nestedModelGetter: NestedModelGetter? ) -> BaseService<T, ErrorType>
 }

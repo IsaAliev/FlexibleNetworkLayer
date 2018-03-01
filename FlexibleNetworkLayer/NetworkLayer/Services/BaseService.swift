@@ -17,7 +17,7 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: Service {
 
     var successHandler: SuccessHandlerBlock?
     var failureHandler: FailureHandlerBlock?
-    var noneHandler: (() -> ())?
+    var endHandler: (() -> ())?
     
     var requestPreparator: RequestPreparator? = BaseRequestPreparator()
     
@@ -49,6 +49,7 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: Service {
                 case let .Error(error):
                     self?.processError(error)
                 }
+                self?.endHandler?()
             })
         }.resume()
         
@@ -69,6 +70,13 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: Service {
         return self
     }
     
+    @discardableResult
+    func onEnd(_ end: @escaping () -> ()) -> BaseService<T, E> {
+        endHandler = end
+        
+        return self
+    }
+    
     private func processSuccess(_ model: T) {
         successHandler?(model)
         successHandler = nil
@@ -77,6 +85,10 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: Service {
     private func processError(_ error: E) {
         failureHandler?(error)
         failureHandler = nil
+    }
+    
+    deinit {
+        print("Service for \(request) died")
     }
 }
 

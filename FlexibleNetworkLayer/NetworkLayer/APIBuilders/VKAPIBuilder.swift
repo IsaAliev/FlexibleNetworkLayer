@@ -8,11 +8,10 @@
 
 import Foundation
 
-class VKAPIBuilder<T: Decodable>: APIBuilder {
-    typealias ResultType = T
+class VKAPIBuilder: APIBuilder {
     typealias ErrorType = VKAPIError
     
-    func buildAPI(for request: HTTPRequestRepresentable,
+    func buildAPI<T: Decodable>(_ responseType: T.Type, request: HTTPRequestRepresentable? = nil,
              decodingProcessor: ModelDecodingProcessor<T>? = nil,
              nestedModelGetter: NestedModelGetter? = nil) -> BaseService<T, VKAPIError> {
         let service = BaseService<T, VKAPIError>()

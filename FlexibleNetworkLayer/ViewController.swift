@@ -9,14 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let getWallService: WallGettable = BasicWallAPI()
+    let getWallAPI: WallGettable = BasicWallAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getWallService.getWall { (wall) in
-            print(wall)
-        }
     }
     
     @IBOutlet weak var textField: UITextField!
