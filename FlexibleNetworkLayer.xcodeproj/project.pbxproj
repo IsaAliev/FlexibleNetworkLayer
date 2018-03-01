@@ -115,16 +115,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		432055EE203DD3F800ECBA0D /* GET */ = {
-			isa = PBXGroup;
-			children = (
-				432055EF203DD41800ECBA0D /* HTTPGetRequest.swift */,
-				CE1EDE95203B6C6B00E58426 /* UsersRouter.swift */,
-				CE542E9A203CBC19009B44A8 /* WallRouter.swift */,
-			);
-			path = GET;
-			sourceTree = "<group>";
-		};
 		4366F687203C160D00A06CC7 /* Serializers */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +211,15 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		CE35C8F520488A9A00AEC0D7 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				CE1EDE95203B6C6B00E58426 /* UsersRouter.swift */,
+				CE542E9A203CBC19009B44A8 /* WallRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
 		CE542E8B203C980B009B44A8 /* ErrorHandling */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,18 +264,11 @@
 			isa = PBXGroup;
 			children = (
 				CE1EDE81203B626100E58426 /* HTTPRequestRepresentable.swift */,
-				CE542EA0203F45DF009B44A8 /* POST */,
-				432055EE203DD3F800ECBA0D /* GET */,
+				CEF80D2A20403115007751D2 /* HTTPPOSTRequest.swift */,
+				432055EF203DD41800ECBA0D /* HTTPGetRequest.swift */,
+				CE35C8F520488A9A00AEC0D7 /* Routers */,
 			);
 			path = Requests;
-			sourceTree = "<group>";
-		};
-		CE542EA0203F45DF009B44A8 /* POST */ = {
-			isa = PBXGroup;
-			children = (
-				CEF80D2A20403115007751D2 /* HTTPPOSTRequest.swift */,
-			);
-			path = POST;
 			sourceTree = "<group>";
 		};
 		CE542EA5203F51BB009B44A8 /* NestedModelGetters */ = {
