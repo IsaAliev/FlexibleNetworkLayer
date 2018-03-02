@@ -13,6 +13,7 @@ struct UsersRouter {
         case online
         case screenName = "screen_name"
         case education
+        case hidden
     }
     
     struct GET: HTTPGETRequest {        

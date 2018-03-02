@@ -11,12 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     let getWallAPI: WallGettable = BasicWallAPI()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getWallAPI.getWallItemsCount(fromOwnerWith: "<some id>") { (count) in
-            print("Wall items count is \(count)")
-        }
     }
     
     @IBOutlet weak var textField: UITextField!

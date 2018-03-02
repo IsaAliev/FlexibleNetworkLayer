@@ -12,16 +12,10 @@ struct User: Decodable {
     var firstName: String
     var lastName: String
     var id: Int
-    var online: Int
-    var screenName: String
-    var hidden: Int
     
     enum CodingKeys: String, CodingKey {
         case firstName = "first_name"
         case lastName = "last_name"
         case id
-        case online
-        case hidden
-        case screenName = "screen_name"
     }
 }

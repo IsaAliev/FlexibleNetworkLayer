@@ -51,7 +51,7 @@ class HTTPResponseHandler<T: Decodable, E: ErrorRepresentable>: ResponseHandler 
                     
                 } else {
                     guard let model = escapedModelJSON[nestedModelGetter.escapedModelKey],
-                        model is JSON,
+                        model is JSON || model is [JSON],
                         let serializedData = try? JSONSerialization.data(withJSONObject: model, options: [])
                         else {
                             completion(Result.Error(E(ProcessingErrorType.modelProcessingError)))
