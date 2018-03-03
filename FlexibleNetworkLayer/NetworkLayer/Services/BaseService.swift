@@ -15,10 +15,11 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: Service {
     var responseHandler: HTTPResponseHandler<T, E>? = HTTPResponseHandler<T, E>()
     var request: HTTPRequestRepresentable?
 
-    var successHandler: SuccessHandlerBlock?
-    var failureHandler: FailureHandlerBlock?
-    var endHandler: (() -> ())?
-    
+    private var successHandler: SuccessHandlerBlock?
+    private var failureHandler: FailureHandlerBlock?
+    private var endHandler: (() -> ())?
+    private var handlingQueue: DispatchQueue?
+
     var requestPreparator: RequestPreparator? = BaseRequestPreparator()
     
     private var session: URLSession {
@@ -41,7 +42,7 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: Service {
 
         session.dataTask(with: urlRequest) { [weak self] (data, response, error) in
             let response = BaseResponse(data: data, response: response, error: error)
-            
+
             self?.responseHandler?.handleResponse(response, completion: { [weak self] (result) in
                 switch result {
                 case let .Value(model):
@@ -49,46 +50,76 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: Service {
                 case let .Error(error):
                     self?.processError(error)
                 }
-                self?.endHandler?()
+                self?.processEnd()
+
             })
         }.resume()
-        
+
         return self
     }
     
     @discardableResult
     func onSucces(_ success: @escaping SuccessHandlerBlock) -> BaseService<T, E> {
         successHandler = success
-        
+ 
         return self
     }
     
     @discardableResult
     func onFailure(_ failure: @escaping FailureHandlerBlock) -> BaseService<T, E> {
         failureHandler = failure
-        
+
         return self
     }
     
     @discardableResult
     func onEnd(_ end: @escaping () -> ()) -> BaseService<T, E> {
         endHandler = end
-        
+
+        return self
+    }
+    
+    @discardableResult
+    func dispatchOn(_ queue: DispatchQueue) -> BaseService<T, E> {
+        handlingQueue = queue
+
         return self
     }
     
     private func processSuccess(_ model: T) {
-        successHandler?(model)
-        successHandler = nil
+        let work = DispatchWorkItem { [weak self] in
+            self?.successHandler?(model)
+        }
+
+        dispatch(work)
     }
 
     private func processError(_ error: E) {
-        failureHandler?(error)
-        failureHandler = nil
+        let work = DispatchWorkItem { [weak self] in
+            self?.failureHandler?(error)
+        }
+
+        dispatch(work)
     }
     
-    deinit {
-        print("Service for \(request) died")
+    private func processEnd() {
+        let work = DispatchWorkItem { [weak self] in
+            self?.endHandler?()
+        }
+
+        dispatch(work)
     }
+    
+    private func dispatch(_ item: DispatchWorkItem) {
+        guard let queue = handlingQueue else {
+            item.perform()
+            return
+        }
+        
+        queue.async {
+            item.perform()
+        }
+    }
+    
 }
 

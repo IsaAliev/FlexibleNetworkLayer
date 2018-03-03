@@ -11,10 +11,22 @@ import UIKit
 class ViewController: UIViewController {
     let getWallAPI: WallGettable = BasicWallAPI()
     
+    var getUsersAPI: BaseService<[User], VKAPIError>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        getUsersAPI = VKAPIBuilder().buildAPI([User].self, nestedModelGetter: ResponseModelGetter.wallResponse)
+        getUsersAPI.request = UsersRouter.GET(["idHere","idHere","idHere"], fields: [])
+        
+        getUsersAPI.sendRequest()?.dispatchOn(DispatchQueue.main)
+            .onSucces({ (users) in
+                print(users)
+                print(Thread.isMainThread)
+            }).onEnd {
+                print(Thread.isMainThread)
+        }
+        
     }
     
     @IBOutlet weak var textField: UITextField!
