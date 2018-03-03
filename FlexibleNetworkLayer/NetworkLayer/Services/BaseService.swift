@@ -87,39 +87,32 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: Service {
     }
     
     private func processSuccess(_ model: T) {
-        let work = DispatchWorkItem { [weak self] in
+        dispatch { [weak self] in
             self?.successHandler?(model)
         }
-
-        dispatch(work)
     }
 
     private func processError(_ error: E) {
-        let work = DispatchWorkItem { [weak self] in
+        dispatch { [weak self] in
             self?.failureHandler?(error)
         }
-
-        dispatch(work)
     }
     
     private func processEnd() {
-        let work = DispatchWorkItem { [weak self] in
+        dispatch { [weak self] in
             self?.endHandler?()
         }
-
-        dispatch(work)
     }
     
-    private func dispatch(_ item: DispatchWorkItem) {
+    private func dispatch(_ block: @escaping () -> ()) {
         guard let queue = handlingQueue else {
-            item.perform()
+            block()
             return
         }
         
         queue.async {
-            item.perform()
+            block()
         }
     }
-    
 }
 
