@@ -24,8 +24,7 @@ struct WallRouter {
         var path: String = "https://api.vk.com/method/wall.post"
         var parameters: JSON? = [:]
         var headerFields: [String: String]?
-        
-        var bodyString: String? = nil
+        var body: Data?
         
         init(message: String) {
             parameters?["message"] = message

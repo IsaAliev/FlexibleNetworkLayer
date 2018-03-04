@@ -14,14 +14,4 @@ extension HTTPPOSTRequest {
     var httpMethod: HTTPMethod {
         return .POST
     }
-    
-    var bodyString: String? {
-        get {
-            return nil
-        }
-        
-        set {
-            
-        }
-    }
 }

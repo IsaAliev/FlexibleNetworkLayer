@@ -18,5 +18,5 @@ protocol ErrorRepresentable {
 }
 
 protocol ErrorType {
-    var rawValue: String { get }
+    var rawValue: Int { get }
 }

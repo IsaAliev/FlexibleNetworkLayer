@@ -13,6 +13,6 @@ struct BaseErrorHandler: ErrorHandler {
     
     func handleError(_ error: ErrorRepresentable) {
         errorTypeHandler.handleError(with: error.type)
-        print("Hadled error with message: \(error.message)")
+        print("Hadled error with message: \(String(describing: error.message))")
     }
 }

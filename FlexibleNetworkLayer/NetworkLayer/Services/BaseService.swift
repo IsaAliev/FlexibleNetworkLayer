@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class BaseService<T: Decodable, E: ErrorRepresentable>: Service {
+final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service, URLSessionTaskDelegate {
     typealias ResultType = T
     typealias ErrorType = E
     
@@ -17,13 +17,14 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: Service {
 
     private var successHandler: SuccessHandlerBlock?
     private var failureHandler: FailureHandlerBlock?
+    private var progressHandler: ((Double) -> ())?
     private var endHandler: (() -> ())?
     private var handlingQueue: DispatchQueue?
 
     var requestPreparator: RequestPreparator? = BaseRequestPreparator()
     
     private var session: URLSession {
-        let session = URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: nil)
+        let session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
         
         return session
     }
@@ -39,7 +40,7 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: Service {
         guard let urlRequest = request.urlRequest() else {
             return nil
         }
-
+        
         session.dataTask(with: urlRequest) { [weak self] (data, response, error) in
             let response = BaseResponse(data: data, response: response, error: error)
 
@@ -80,6 +81,13 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: Service {
     }
     
     @discardableResult
+    func onProgress(_ progress: @escaping (Double) -> ()) -> BaseService<T, E> {
+        progressHandler = progress
+        
+        return self
+    }
+    
+    @discardableResult
     func dispatchOn(_ queue: DispatchQueue) -> BaseService<T, E> {
         handlingQueue = queue
 
@@ -112,6 +120,12 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: Service {
         
         queue.async {
             block()
+        }
+    }
+    
+    func urlSession(_ session: URLSession, task: URLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
+        dispatch { [weak self] in
+            self?.progressHandler?(task.progress.fractionCompleted)
         }
     }
 }

@@ -8,8 +8,10 @@
 
 import Foundation
 
-enum BaseErrorType: String, ErrorType {
-    case fatalError
+enum BaseErrorType: Int, ErrorType {
+    case fatalError = 500
+    case authorizationRequired = 401
+    case unknown = 0
 }
 
 struct BaseError: ErrorRepresentable {
@@ -22,8 +24,8 @@ struct BaseError: ErrorRepresentable {
     }
     
     init(_ response: ResponseRepresentable) {
-        errorCode = 0
+        errorCode = (response.response as? HTTPURLResponse)?.statusCode
         message = ""
-        type = BaseErrorType.fatalError
+        type = BaseErrorType(rawValue: errorCode ?? 0) ?? .unknown
     }
 }

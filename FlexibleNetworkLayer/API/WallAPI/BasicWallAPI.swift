@@ -10,7 +10,7 @@ import Foundation
 
 class BasicWallAPI: WallAPI {
     private lazy var getWallService: BaseService<Wall, VKAPIError> = {
-        return VKAPIBuilder().buildAPI(Wall.self, nestedModelGetter: ResponseModelGetter.wallResponse)
+        return VKAPIBuilder().buildAPI(Wall.self, nestedModelGetter: ResponseModelGetter.response)
     }()
     
     private lazy var postService: BaseService<[String: [String: Int]], VKAPIError> = {

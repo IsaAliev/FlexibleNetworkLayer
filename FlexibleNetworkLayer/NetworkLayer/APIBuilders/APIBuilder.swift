@@ -11,7 +11,7 @@ import Foundation
 protocol APIBuilder {
     associatedtype ErrorType: ErrorRepresentable
     
-    func buildAPI<T: Decodable>(_ responseType: T.Type, request: HTTPRequestRepresentable?,
+    func buildAPI<T>(_ responseType: T.Type, request: HTTPRequestRepresentable?,
                                 decodingProcessor: ModelDecodingProcessor<T>?,
                                 nestedModelGetter: NestedModelGetter? ) -> BaseService<T, ErrorType>
 }

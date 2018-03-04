@@ -9,24 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let getWallAPI: WallGettable = BasicWallAPI()
-    
-    var getUsersAPI: BaseService<[User], VKAPIError>!
+    var imgurPOSTAPI: BaseService<IMGurImageInfo, BaseError>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getUsersAPI = VKAPIBuilder().buildAPI([User].self, nestedModelGetter: ResponseModelGetter.wallResponse)
-        getUsersAPI.request = UsersRouter.GET(["idHere","idHere","idHere"], fields: [])
+        imgurPOSTAPI = IMGurAPIBuilder().buildAPI(IMGurImageInfo.self,
+                                                  request: IMGurImageRouter.POST(#imageLiteral(resourceName: "BergenHordalandNorwayVagen.jpg"), name: "Big man in forest"),
+                                                  nestedModelGetter: ResponseModelGetter.imgurImageInfo)
         
-        getUsersAPI.sendRequest()?.dispatchOn(DispatchQueue.main)
-            .onSucces({ (users) in
-                print(users)
-                print(Thread.isMainThread)
-            }).onEnd {
-                print(Thread.isMainThread)
-        }
-        
+        imgurPOSTAPI.sendRequest()?
+            .dispatchOn(DispatchQueue.main)
+            .onSucces({ (response) in
+                print(response)
+            }).onFailure({ (error) in
+                print(error)
+            }).onProgress({ (progress) in
+                print("Progress: \(progress)")
+            })
     }
     
     @IBOutlet weak var textField: UITextField!

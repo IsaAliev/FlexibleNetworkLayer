@@ -20,7 +20,7 @@ protocol HTTPRequestRepresentable {
     var httpMethod: HTTPMethod { get }
     var parameters: JSON? { get set }
     var headerFields: [String: String]? { get set }
-    var bodyString: String? { get set }
+    var body: Data? { get set }
 }
 
 extension HTTPRequestRepresentable {
@@ -44,8 +44,8 @@ extension HTTPRequestRepresentable {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = self.httpMethod.rawValue
         urlRequest.allHTTPHeaderFields = headerFields
-        if let body = bodyString {
-            urlRequest.httpBody = body.data(using: .utf8)
+        if let body = body {
+            urlRequest.httpBody = body
         }
 
         return urlRequest

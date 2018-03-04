@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum VKAPIErrorType: String, ErrorType {
+enum VKAPIErrorType: Int, ErrorType {
     case invalidAccessToken
     case unknownError
 }

@@ -9,10 +9,12 @@
 import Foundation
 
 enum ResponseModelGetter: String, NestedModelGetter {
-    case wallResponse = "response"
+    case response = "response"
     case wallResponseItems = "response.items"
     case wallResponseCount = "response.count"
     case wallResponseFirstText = "response.items.text"
+    
+    case imgurImageInfo = "data"
     
     var keyPath: String {
         return self.rawValue

@@ -15,7 +15,7 @@ extension HTTPGETRequest {
         return .GET
     }
     
-    var bodyString: String? {
+    var body: Data? {
         get {
             return nil
         }

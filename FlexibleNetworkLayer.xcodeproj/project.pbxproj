@@ -36,6 +36,12 @@
 		CE1EDE98203B6E0B00E58426 /* BaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDE97203B6E0B00E58426 /* BaseError.swift */; };
 		CE35C8ED20432F1300AEC0D7 /* VKAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8EC20432F1300AEC0D7 /* VKAPIError.swift */; };
 		CE35C8EF2043357200AEC0D7 /* ProcessingErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8EE2043357200AEC0D7 /* ProcessingErrorType.swift */; };
+		CE35C8F7204ABF2800AEC0D7 /* IMGurImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8F6204ABF2800AEC0D7 /* IMGurImageRouter.swift */; };
+		CE35C8F9204ABFB200AEC0D7 /* VKAPIRequestPreparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8F8204ABFB200AEC0D7 /* VKAPIRequestPreparator.swift */; };
+		CE35C8FB204ABFEB00AEC0D7 /* IMGurRequestPreparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8FA204ABFEB00AEC0D7 /* IMGurRequestPreparator.swift */; };
+		CE35C8FD204AC04000AEC0D7 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8FC204AC04000AEC0D7 /* APIKeys.swift */; };
+		CE35C8FF204AC07400AEC0D7 /* IMGurAPIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8FE204AC07400AEC0D7 /* IMGurAPIBuilder.swift */; };
+		CE35C901204AC4F800AEC0D7 /* IMGurImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C900204AC4F800AEC0D7 /* IMGurImageInfo.swift */; };
 		CE542E90203CA948009B44A8 /* ModelDecodingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE542E8F203CA948009B44A8 /* ModelDecodingProcessor.swift */; };
 		CE542E93203CAAB1009B44A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE542E92203CAAB1009B44A8 /* User.swift */; };
 		CE542E95203CB2B6009B44A8 /* UsersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE542E94203CB2B6009B44A8 /* UsersList.swift */; };
@@ -45,6 +51,9 @@
 		CE542E9F203CBCF2009B44A8 /* WallItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE542E9E203CBCF2009B44A8 /* WallItem.swift */; };
 		CE542EA4203F4CE4009B44A8 /* NestedModelGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE542EA3203F4CE4009B44A8 /* NestedModelGetter.swift */; };
 		CE542EA7203F51E8009B44A8 /* ResponseModelGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE542EA6203F51E8009B44A8 /* ResponseModelGetter.swift */; };
+		CEBE4303204BDCC1006217A0 /* BodyCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE4302204BDCC1006217A0 /* BodyCreator.swift */; };
+		CEBE4305204BE2AE006217A0 /* Data+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE4304204BE2AE006217A0 /* Data+String.swift */; };
+		CEBE9794204B27EB00184563 /* BergenHordalandNorwayVagen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEBE9793204B27EA00184563 /* BergenHordalandNorwayVagen.jpg */; };
 		CEF80D2020400B02007751D2 /* StringDecodingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D1F20400B02007751D2 /* StringDecodingProcessor.swift */; };
 		CEF80D2220400B4C007751D2 /* IntDecodingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D2120400B4C007751D2 /* IntDecodingProcessor.swift */; };
 		CEF80D2B20403115007751D2 /* HTTPPOSTRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D2A20403115007751D2 /* HTTPPOSTRequest.swift */; };
@@ -86,6 +95,12 @@
 		CE1EDE97203B6E0B00E58426 /* BaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseError.swift; sourceTree = "<group>"; };
 		CE35C8EC20432F1300AEC0D7 /* VKAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPIError.swift; sourceTree = "<group>"; };
 		CE35C8EE2043357200AEC0D7 /* ProcessingErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingErrorType.swift; sourceTree = "<group>"; };
+		CE35C8F6204ABF2800AEC0D7 /* IMGurImageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMGurImageRouter.swift; sourceTree = "<group>"; };
+		CE35C8F8204ABFB200AEC0D7 /* VKAPIRequestPreparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPIRequestPreparator.swift; sourceTree = "<group>"; };
+		CE35C8FA204ABFEB00AEC0D7 /* IMGurRequestPreparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMGurRequestPreparator.swift; sourceTree = "<group>"; };
+		CE35C8FC204AC04000AEC0D7 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		CE35C8FE204AC07400AEC0D7 /* IMGurAPIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMGurAPIBuilder.swift; sourceTree = "<group>"; };
+		CE35C900204AC4F800AEC0D7 /* IMGurImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMGurImageInfo.swift; sourceTree = "<group>"; };
 		CE542E8F203CA948009B44A8 /* ModelDecodingProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDecodingProcessor.swift; sourceTree = "<group>"; };
 		CE542E92203CAAB1009B44A8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CE542E94203CB2B6009B44A8 /* UsersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersList.swift; sourceTree = "<group>"; };
@@ -95,6 +110,9 @@
 		CE542E9E203CBCF2009B44A8 /* WallItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallItem.swift; sourceTree = "<group>"; };
 		CE542EA3203F4CE4009B44A8 /* NestedModelGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedModelGetter.swift; sourceTree = "<group>"; };
 		CE542EA6203F51E8009B44A8 /* ResponseModelGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModelGetter.swift; sourceTree = "<group>"; };
+		CEBE4302204BDCC1006217A0 /* BodyCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyCreator.swift; sourceTree = "<group>"; };
+		CEBE4304204BE2AE006217A0 /* Data+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+String.swift"; sourceTree = "<group>"; };
+		CEBE9793204B27EA00184563 /* BergenHordalandNorwayVagen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BergenHordalandNorwayVagen.jpg; sourceTree = "<group>"; };
 		CEF80D1F20400B02007751D2 /* StringDecodingProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDecodingProcessor.swift; sourceTree = "<group>"; };
 		CEF80D2120400B4C007751D2 /* IntDecodingProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntDecodingProcessor.swift; sourceTree = "<group>"; };
 		CEF80D2A20403115007751D2 /* HTTPPOSTRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPPOSTRequest.swift; sourceTree = "<group>"; };
@@ -171,6 +189,7 @@
 		CE1EDE6D203B622E00E58426 /* FlexibleNetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				CEBE9793204B27EA00184563 /* BergenHordalandNorwayVagen.jpg */,
 				CE35C8F02045D52900AEC0D7 /* API */,
 				CE542E91203CAAA5009B44A8 /* Models */,
 				CE1EDE80203B623800E58426 /* NetworkLayer */,
@@ -207,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF80D342040678F007751D2 /* WallAPI */,
+				CE35C8FC204AC04000AEC0D7 /* APIKeys.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -216,6 +236,7 @@
 			children = (
 				CE1EDE95203B6C6B00E58426 /* UsersRouter.swift */,
 				CE542E9A203CBC19009B44A8 /* WallRouter.swift */,
+				CE35C8F6204ABF2800AEC0D7 /* IMGurImageRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -245,6 +266,7 @@
 				CE542E94203CB2B6009B44A8 /* UsersList.swift */,
 				CE542E9C203CBCDE009B44A8 /* Wall.swift */,
 				CE542E9E203CBCF2009B44A8 /* WallItem.swift */,
+				CE35C900204AC4F800AEC0D7 /* IMGurImageInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,6 +285,8 @@
 		CE542E99203CBBC6009B44A8 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				CEBE4304204BE2AE006217A0 /* Data+String.swift */,
+				CEBE4302204BDCC1006217A0 /* BodyCreator.swift */,
 				CE1EDE81203B626100E58426 /* HTTPRequestRepresentable.swift */,
 				CEF80D2A20403115007751D2 /* HTTPPOSTRequest.swift */,
 				432055EF203DD41800ECBA0D /* HTTPGetRequest.swift */,
@@ -305,6 +329,8 @@
 			children = (
 				432055E8203DAC2D00ECBA0D /* RequestPreparator.swift */,
 				432055EA203DAC5300ECBA0D /* BaseRequestPreparator.swift */,
+				CE35C8F8204ABFB200AEC0D7 /* VKAPIRequestPreparator.swift */,
+				CE35C8FA204ABFEB00AEC0D7 /* IMGurRequestPreparator.swift */,
 			);
 			path = RequestPreparators;
 			sourceTree = "<group>";
@@ -332,6 +358,7 @@
 			children = (
 				CEF80D3620408D9F007751D2 /* APIBuilder.swift */,
 				CEF80D3820408E03007751D2 /* VKAPIBuilder.swift */,
+				CE35C8FE204AC07400AEC0D7 /* IMGurAPIBuilder.swift */,
 			);
 			path = APIBuilders;
 			sourceTree = "<group>";
@@ -396,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1EDE79203B622E00E58426 /* LaunchScreen.storyboard in Resources */,
+				CEBE9794204B27EB00184563 /* BergenHordalandNorwayVagen.jpg in Resources */,
 				CE1EDE76203B622E00E58426 /* Assets.xcassets in Resources */,
 				CE1EDE74203B622E00E58426 /* Main.storyboard in Resources */,
 			);
@@ -414,19 +442,23 @@
 				CE1EDE8C203B640B00E58426 /* Service.swift in Sources */,
 				CE35C8ED20432F1300AEC0D7 /* VKAPIError.swift in Sources */,
 				CE1EDE84203B62A500E58426 /* ErrorRepresentable.swift in Sources */,
+				CE35C8F7204ABF2800AEC0D7 /* IMGurImageRouter.swift in Sources */,
 				4366F689203C161E00A06CC7 /* JSONSerializer.swift in Sources */,
 				CEF80D2220400B4C007751D2 /* IntDecodingProcessor.swift in Sources */,
 				CE35C8EF2043357200AEC0D7 /* ProcessingErrorType.swift in Sources */,
+				CE35C8FB204ABFEB00AEC0D7 /* IMGurRequestPreparator.swift in Sources */,
 				432055EB203DAC5300ECBA0D /* BaseRequestPreparator.swift in Sources */,
 				432055E9203DAC2D00ECBA0D /* RequestPreparator.swift in Sources */,
 				4366F69F203C607900A06CC7 /* BaseSuccessResponseChecker.swift in Sources */,
 				CE542E93203CAAB1009B44A8 /* User.swift in Sources */,
+				CEBE4303204BDCC1006217A0 /* BodyCreator.swift in Sources */,
 				4366F69D203C603900A06CC7 /* SuccessResponseChecker.swift in Sources */,
 				CE542EA7203F51E8009B44A8 /* ResponseModelGetter.swift in Sources */,
 				4366F695203C562200A06CC7 /* BaseErrorHandler.swift in Sources */,
 				4366F697203C565600A06CC7 /* BaseErrorTypeHandler.swift in Sources */,
 				4366F686203C15D200A06CC7 /* Serializer.swift in Sources */,
 				CE542E95203CB2B6009B44A8 /* UsersList.swift in Sources */,
+				CEBE4305204BE2AE006217A0 /* Data+String.swift in Sources */,
 				CE542E98203CB386009B44A8 /* DecodingProcessor.swift in Sources */,
 				CE1EDE94203B69FC00E58426 /* HTTPResponseHandler.swift in Sources */,
 				CE542E9B203CBC19009B44A8 /* WallRouter.swift in Sources */,
@@ -434,14 +466,17 @@
 				CE1EDE6F203B622E00E58426 /* AppDelegate.swift in Sources */,
 				CEF80D3120403266007751D2 /* WallGettable.swift in Sources */,
 				CE1EDE8E203B649300E58426 /* ErrorHandler.swift in Sources */,
+				CE35C8FD204AC04000AEC0D7 /* APIKeys.swift in Sources */,
 				CE542EA4203F4CE4009B44A8 /* NestedModelGetter.swift in Sources */,
 				CEF80D3320403323007751D2 /* BasicWallAPI.swift in Sources */,
 				CEF80D2020400B02007751D2 /* StringDecodingProcessor.swift in Sources */,
 				432055F0203DD41800ECBA0D /* HTTPGetRequest.swift in Sources */,
 				CEF80D3720408D9F007751D2 /* APIBuilder.swift in Sources */,
+				CE35C901204AC4F800AEC0D7 /* IMGurImageInfo.swift in Sources */,
 				CE542E90203CA948009B44A8 /* ModelDecodingProcessor.swift in Sources */,
 				CE1EDE82203B626100E58426 /* HTTPRequestRepresentable.swift in Sources */,
 				CE1EDE90203B64D100E58426 /* BaseService.swift in Sources */,
+				CE35C8FF204AC07400AEC0D7 /* IMGurAPIBuilder.swift in Sources */,
 				CEF80D2B20403115007751D2 /* HTTPPOSTRequest.swift in Sources */,
 				CE1EDE92203B69A700E58426 /* BaseResponse.swift in Sources */,
 				CEF80D3920408E03007751D2 /* VKAPIBuilder.swift in Sources */,
@@ -450,6 +485,7 @@
 				CE1EDE8A203B635300E58426 /* ResponseHandler.swift in Sources */,
 				CE1EDE98203B6E0B00E58426 /* BaseError.swift in Sources */,
 				CE542E9D203CBCDE009B44A8 /* Wall.swift in Sources */,
+				CE35C8F9204ABFB200AEC0D7 /* VKAPIRequestPreparator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ProcessingErrorType: String, ErrorType {
+enum ProcessingErrorType: Int, ErrorType {
     case modelProcessingError
 }
 
