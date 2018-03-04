@@ -29,7 +29,7 @@ struct BodyCreator {
         self.boundary = boundary
     }
     
-    func createBody(parameters: [String: String]) -> Data {
+    func createBody(parameters: [String: String], with files: [FileData]? = nil) -> Data {
         var body = Data()
 
         for (key, value) in parameters {
@@ -38,18 +38,20 @@ struct BodyCreator {
             body.append("\(value)\(crlf)")
         }
         
-        body.append(finalBoundary)
+        if let files = files {
+            files.forEach({ appendFile($0, to: &body) })
+        }
         
+        body.append(finalBoundary)
+
         return body as Data
     }
     
-    func appendFile(_ file: FileData, to body: inout Data) -> Data {
+    private func appendFile(_ file: FileData, to body: inout Data) {
         body.append(boundaryPrefix)
         body.append("Content-Disposition: form-data; name=\"file\"; filename=\"\(file.fileName)\"\(crlf)")
         body.append("Content-Type: \(file.mimeType)\(crlf)\(crlf)")
         body.append(file.data)
         body.append(crlf)
-        
-        return body
     }
 }
