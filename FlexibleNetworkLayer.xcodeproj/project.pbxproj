@@ -39,7 +39,7 @@
 		CE35C8F7204ABF2800AEC0D7 /* IMGurImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8F6204ABF2800AEC0D7 /* IMGurImageRouter.swift */; };
 		CE35C8F9204ABFB200AEC0D7 /* VKAPIRequestPreparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8F8204ABFB200AEC0D7 /* VKAPIRequestPreparator.swift */; };
 		CE35C8FB204ABFEB00AEC0D7 /* IMGurRequestPreparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8FA204ABFEB00AEC0D7 /* IMGurRequestPreparator.swift */; };
-		CE35C8FD204AC04000AEC0D7 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8FC204AC04000AEC0D7 /* APIKeys.swift */; };
+		CE35C8FD204AC04000AEC0D7 /* APIStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8FC204AC04000AEC0D7 /* APIStrings.swift */; };
 		CE35C8FF204AC07400AEC0D7 /* IMGurAPIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8FE204AC07400AEC0D7 /* IMGurAPIBuilder.swift */; };
 		CE35C901204AC4F800AEC0D7 /* IMGurImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C900204AC4F800AEC0D7 /* IMGurImageInfo.swift */; };
 		CE542E90203CA948009B44A8 /* ModelDecodingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE542E8F203CA948009B44A8 /* ModelDecodingProcessor.swift */; };
@@ -98,7 +98,7 @@
 		CE35C8F6204ABF2800AEC0D7 /* IMGurImageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMGurImageRouter.swift; sourceTree = "<group>"; };
 		CE35C8F8204ABFB200AEC0D7 /* VKAPIRequestPreparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPIRequestPreparator.swift; sourceTree = "<group>"; };
 		CE35C8FA204ABFEB00AEC0D7 /* IMGurRequestPreparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMGurRequestPreparator.swift; sourceTree = "<group>"; };
-		CE35C8FC204AC04000AEC0D7 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		CE35C8FC204AC04000AEC0D7 /* APIStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStrings.swift; sourceTree = "<group>"; };
 		CE35C8FE204AC07400AEC0D7 /* IMGurAPIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMGurAPIBuilder.swift; sourceTree = "<group>"; };
 		CE35C900204AC4F800AEC0D7 /* IMGurImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMGurImageInfo.swift; sourceTree = "<group>"; };
 		CE542E8F203CA948009B44A8 /* ModelDecodingProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDecodingProcessor.swift; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF80D342040678F007751D2 /* WallAPI */,
-				CE35C8FC204AC04000AEC0D7 /* APIKeys.swift */,
+				CE35C8FC204AC04000AEC0D7 /* APIStrings.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -466,7 +466,7 @@
 				CE1EDE6F203B622E00E58426 /* AppDelegate.swift in Sources */,
 				CEF80D3120403266007751D2 /* WallGettable.swift in Sources */,
 				CE1EDE8E203B649300E58426 /* ErrorHandler.swift in Sources */,
-				CE35C8FD204AC04000AEC0D7 /* APIKeys.swift in Sources */,
+				CE35C8FD204AC04000AEC0D7 /* APIStrings.swift in Sources */,
 				CE542EA4203F4CE4009B44A8 /* NestedModelGetter.swift in Sources */,
 				CEF80D3320403323007751D2 /* BasicWallAPI.swift in Sources */,
 				CEF80D2020400B02007751D2 /* StringDecodingProcessor.swift in Sources */,

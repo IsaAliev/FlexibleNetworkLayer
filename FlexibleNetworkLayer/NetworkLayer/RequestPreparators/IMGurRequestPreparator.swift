@@ -10,6 +10,6 @@ import Foundation
 
 struct IMGurRequestPreparator: RequestPreparator {
     func prepareRequest(_ request: inout HTTPRequestRepresentable) {
-        request.headerFields?["Authorization"] = "Client-ID \(APIKeys.imgurClientID)"
+        request.headerFields?["Authorization"] = "Client-ID \(APIStrings.APIKey.imgurClientID)"
     }
 }

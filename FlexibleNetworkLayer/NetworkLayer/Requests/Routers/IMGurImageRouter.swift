@@ -10,8 +10,10 @@ import Foundation
 import UIKit
 
 struct IMGurImageRouter {
+    static let route = APIStrings.BaseURL.imgur + "image/"
+    
     struct GET: HTTPGETRequest {
-        var path: String = "https://api.imgur.com/3/image/"
+        var path: String = IMGurImageRouter.route
         var parameters: JSON? = [:]
         var headerFields: [String: String]? = [:]
         
@@ -21,7 +23,7 @@ struct IMGurImageRouter {
     }
     
     struct POST: HTTPPOSTRequest {
-        var path: String = "https://api.imgur.com/3/image/"
+        var path: String = IMGurImageRouter.route
         var parameters: JSON? = [:]
         var headerFields: [String: String]? = [:]
         var body: Data?

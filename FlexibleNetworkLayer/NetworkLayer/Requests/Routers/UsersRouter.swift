@@ -17,7 +17,9 @@ struct UsersRouter {
     }
     
     struct GET: HTTPGETRequest {        
-        var path: String { return "https://api.vk.com/method/users.get" }
+        var path: String {
+            return APIStrings.BaseURL.vk + "users.get"
+        }
         var parameters: JSON? = [:]
         var headerFields: [String: String]?
         

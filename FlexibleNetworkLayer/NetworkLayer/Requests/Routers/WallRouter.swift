@@ -10,7 +10,7 @@ import Foundation
 
 struct WallRouter {
     struct GET: HTTPGETRequest {
-        var path: String = "https://api.vk.com/method/wall.get"
+        var path: String = APIStrings.BaseURL.vk + "wall.get"
         var parameters: JSON? = [:]
         var headerFields: [String: String]?
         
@@ -21,7 +21,7 @@ struct WallRouter {
     }
     
     struct POST: HTTPPOSTRequest {
-        var path: String = "https://api.vk.com/method/wall.post"
+        var path: String = APIStrings.BaseURL.vk + "wall.post"
         var parameters: JSON? = [:]
         var headerFields: [String: String]?
         var body: Data?
