@@ -14,7 +14,8 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
     
     var responseHandler: HTTPResponseHandler<T, E>? = HTTPResponseHandler<T, E>()
     var request: HTTPRequestRepresentable?
-
+    var loger: Loger = BaseLoger()
+    
     private var successHandler: SuccessHandlerBlock?
     private var failureHandler: FailureHandlerBlock?
     private var progressHandler: ((Double) -> ())?
@@ -40,10 +41,10 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
         guard let urlRequest = request.urlRequest() else {
             return nil
         }
-        
+        loger.logRequest(request)
         session.dataTask(with: urlRequest) { [weak self] (data, response, error) in
             let response = BaseResponse(data: data, response: response, error: error)
-
+            self?.loger.logResponse(response)
             self?.responseHandler?.handleResponse(response, completion: { [weak self] (result) in
                 switch result {
                 case let .Value(model):
