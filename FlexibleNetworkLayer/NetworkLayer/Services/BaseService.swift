@@ -54,6 +54,7 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
                 switch result {
                 case let .Value(model):
                     self?.processSuccess(model)
+                    self?.processPagedRequestIfNeededWith(model)
                 case let .Error(error):
                     self?.processError(error)
                 }
@@ -66,7 +67,7 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
     }
     
     func resetRequest() {
-        guard let pagedRequest = request as? PagedRequest else {
+        guard let pagedRequest = request as? PagedRequest<T> else {
                 return
         }
         
@@ -121,8 +122,6 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
     }
     
     private func processEnd() {
-        processPagedRequestIfNeeded()
-        
         dispatch { [weak self] in
             self?.endHandler?()
         }
@@ -139,13 +138,12 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
         }
     }
     
-    private func processPagedRequestIfNeeded() {
-        guard let pagedRequest = request as? PagedRequest,
-            let response = currentResponse else {
+    private func processPagedRequestIfNeededWith(_ model: T) {
+        guard let pagedRequest = request as? PagedRequest<T> else {
             return
         }
         
-        pagedRequest.prepareForNext(with: response)
+        pagedRequest.prepareForNext(with: model)
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {

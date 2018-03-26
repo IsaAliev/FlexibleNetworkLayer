@@ -32,7 +32,11 @@ extension HTTPRequestRepresentable {
         if let parametersJSON = self.parameters {
             var queryItems = [URLQueryItem]()
             for (key, value) in parametersJSON {
-                queryItems.append(URLQueryItem(name: key, value: value as? String))
+                var valueString = value as? String
+                if valueString == nil {
+                    valueString = String(describing: value as! NSNumber)
+                }
+                queryItems.append(URLQueryItem(name: key, value: valueString))
             }
             urlComponents.queryItems = queryItems
         }

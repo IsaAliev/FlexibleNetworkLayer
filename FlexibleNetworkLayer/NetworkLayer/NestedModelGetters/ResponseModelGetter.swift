@@ -14,7 +14,7 @@ enum ResponseModelGetter: String, NestedModelGetter {
     case wallResponseCount = "response.count"
     case wallResponseFirstText = "response.items.text"
     
-    case imgurImageInfo = "data"
+    case data = "data"
     
     var keyPath: String {
         return self.rawValue

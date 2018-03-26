@@ -9,24 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var imgurPOSTAPI: BaseService<IMGurImageInfo, BaseError>!
+    var marvelGetAPI: BaseService<MarvelCharactersList, BaseError>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        imgurPOSTAPI = IMGurAPIBuilder().buildAPI(IMGurImageInfo.self,
-                                                  request: IMGurImageRouter.POST(#imageLiteral(resourceName: "BergenHordalandNorwayVagen.jpg"), name: "Big man in forest"),
-                                                  nestedModelGetter: ResponseModelGetter.imgurImageInfo)
+
+        marvelGetAPI = MarvelAPIBuilder().buildAPI(MarvelCharactersList.self,
+                                                   request: MarvelCharacterRouter.GET(),
+                                                   decodingProcessor: nil,
+                                                   nestedModelGetter: ResponseModelGetter.data)
         
-        imgurPOSTAPI.sendRequest()?
-            .dispatchOn(DispatchQueue.main)
-            .onSucces({ (response) in
-                print(response)
-            }).onFailure({ (error) in
-                print(error)
-            }).onProgress({ (progress) in
-                print("Progress: \(progress)")
+        marvelGetAPI.sendRequest()?.onSucces({ (list) in
+            print(list)
+        })
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            print("The example of paging request: One more request")
+            self.marvelGetAPI.sendRequest()?.onSucces({ (list) in
+                print(list)
             })
+        }
+        
     }
     
     @IBOutlet weak var textField: UITextField!

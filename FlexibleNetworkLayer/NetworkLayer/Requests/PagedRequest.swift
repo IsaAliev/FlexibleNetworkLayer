@@ -8,7 +8,19 @@
 
 import Foundation
 
-protocol PagedRequest: HTTPGETRequest {
-    func prepareForNext(with response: ResponseRepresentable)
-    func resetToStart()
+class PagedRequest<T: Decodable>: HTTPGETRequest {
+    var path: String {
+        return ""
+    }
+    
+    var parameters: JSON? = [String: Any]()
+    var headerFields: [String : String]?
+    
+    func prepareForNext(with response: T) {
+        
+    }
+    
+    func resetToStart() {
+        
+    }
 }

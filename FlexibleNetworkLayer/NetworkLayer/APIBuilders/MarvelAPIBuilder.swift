@@ -1,14 +1,14 @@
 //
-//  IMGurAPIBuilder.swift
+//  MarvelAPIBuilder.swift
 //  FlexibleNetworkLayer
 //
-//  Created by Isa Aliev on 03.03.18.
+//  Created by Isa Aliev on 26.03.18.
 //  Copyright © 2018 IA. All rights reserved.
 //
 
 import Foundation
 
-struct IMGurAPIBuilder: APIBuilder {
+struct MarvelAPIBuilder: APIBuilder {
     typealias ErrorType = BaseError
     
     func buildAPI<T>(_ responseType: T.Type, request: HTTPRequestRepresentable?, decodingProcessor: ModelDecodingProcessor<T>? = nil, nestedModelGetter: NestedModelGetter? = nil) -> BaseService<T, ErrorType>  {
@@ -18,7 +18,7 @@ struct IMGurAPIBuilder: APIBuilder {
         let responseHandler = HTTPResponseHandler<T, ErrorType>()
         responseHandler.nestedModelGetter = nestedModelGetter
         responseHandler.successResponseChecker = BaseSuccessResponseChecker()
-        service.requestPreparator = IMGurRequestPreparator()
+        service.requestPreparator = MarvelRequestPreparator()
         
         if let decodingProcessor = decodingProcessor {
             responseHandler.decodingProcessor = decodingProcessor
