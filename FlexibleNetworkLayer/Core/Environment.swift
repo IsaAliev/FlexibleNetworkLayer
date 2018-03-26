@@ -27,7 +27,7 @@ struct Environment {
                 let component = pathComponents[i]
                 
                 if i == pathComponents.count - 1 {
-                    return value?[component] as! String
+                    return value?[component] as? String ?? ""
                 } else {
                     value = value?[component] as? [String : Any]
                 }
