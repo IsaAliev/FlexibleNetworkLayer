@@ -21,7 +21,8 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
     private var progressHandler: ((Double) -> ())?
     private var endHandler: (() -> ())?
     private var handlingQueue: DispatchQueue?
-
+    private var currentResponse: ResponseRepresentable?
+    
     var requestPreparator: RequestPreparator? = BaseRequestPreparator()
     
     private var session: URLSession {
@@ -41,11 +42,15 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
         guard let urlRequest = request.urlRequest() else {
             return nil
         }
+        
         loger.logRequest(request)
+        
         session.dataTask(with: urlRequest) { [weak self] (data, response, error) in
-            let response = BaseResponse(data: data, response: response, error: error)
-            self?.loger.logResponse(response)
-            self?.responseHandler?.handleResponse(response, completion: { [weak self] (result) in
+            guard let strongSelf = self else { return }
+            
+            strongSelf.currentResponse = BaseResponse(data: data, response: response, error: error)
+            strongSelf.loger.logResponse(strongSelf.currentResponse!)
+            strongSelf.responseHandler?.handleResponse(strongSelf.currentResponse!, completion: { [weak self] (result) in
                 switch result {
                 case let .Value(model):
                     self?.processSuccess(model)
@@ -53,11 +58,19 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
                     self?.processError(error)
                 }
                 self?.processEnd()
-
             })
+            
         }.resume()
 
         return self
+    }
+    
+    func resetRequest() {
+        guard let pagedRequest = request as? PagedRequest else {
+                return
+        }
+        
+        pagedRequest.resetToStart()
     }
     
     @discardableResult
@@ -108,6 +121,8 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
     }
     
     private func processEnd() {
+        processPagedRequestIfNeeded()
+        
         dispatch { [weak self] in
             self?.endHandler?()
         }
@@ -122,6 +137,15 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
         queue.async {
             block()
         }
+    }
+    
+    private func processPagedRequestIfNeeded() {
+        guard let pagedRequest = request as? PagedRequest,
+            let response = currentResponse else {
+            return
+        }
+        
+        pagedRequest.prepareForNext(with: response)
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
