@@ -11,4 +11,5 @@ import Foundation
 struct MarvelCharactersList: Decodable {
     var results: [MarvelCharacter]
     var offset: Int
+    var total: Int
 }

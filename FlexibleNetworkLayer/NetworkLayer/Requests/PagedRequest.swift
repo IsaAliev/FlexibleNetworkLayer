@@ -13,14 +13,17 @@ class PagedRequest<T: Decodable>: HTTPGETRequest {
         return ""
     }
     
+    var isPagesDidEnd: Bool = false
+
     var parameters: JSON? = [String: Any]()
     var headerFields: [String : String]?
-    
+
     func prepareForNext(with response: T) {
-        
+
     }
-    
+
     func resetToStart() {
-        
+
     }
 }
+

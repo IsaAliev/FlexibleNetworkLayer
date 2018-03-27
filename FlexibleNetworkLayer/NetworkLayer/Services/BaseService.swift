@@ -20,6 +20,7 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
     private var failureHandler: FailureHandlerBlock?
     private var progressHandler: ((Double) -> ())?
     private var endHandler: (() -> ())?
+    private var lastPageHandler: (() -> ())?
     private var handlingQueue: DispatchQueue?
     private var currentResponse: ResponseRepresentable?
     
@@ -37,6 +38,10 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
             return nil
         }
         
+        if processLastPageIfNeeded() {
+            return self
+        }
+
         requestPreparator?.prepareRequest(&request)
         
         guard let urlRequest = request.urlRequest() else {
@@ -109,6 +114,31 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
         return self
     }
     
+    @discardableResult
+    func onLastPage(_ lastPage: @escaping () -> ()) -> BaseService<T, E> {
+        lastPageHandler = lastPage
+        
+        return self
+    }
+    
+    private func processLastPageIfNeeded() -> Bool {
+        if isPagesEnded() {
+            processLastPage()
+            
+            return true
+        }
+        
+        return false
+    }
+    
+    private func isPagesEnded() -> Bool {
+        if let pagedRequest = request as? PagedRequest<T> {
+            return pagedRequest.isPagesDidEnd
+        }
+        
+        return false
+    }
+    
     private func processSuccess(_ model: T) {
         dispatch { [weak self] in
             self?.successHandler?(model)
@@ -124,6 +154,12 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
     private func processEnd() {
         dispatch { [weak self] in
             self?.endHandler?()
+        }
+    }
+    
+    private func processLastPage() {
+        dispatch { [weak self] in
+            self?.lastPageHandler?()
         }
     }
     

@@ -10,6 +10,8 @@ import Foundation
 
 struct MarvelCharacterRouter {
     class GET: PagedRequest<MarvelCharactersList> {
+        let limit = 100
+        
         override var path: String {
             return APIStrings.BaseURL.marvel + "characters"
         }
@@ -17,12 +19,14 @@ struct MarvelCharacterRouter {
         override init() {
             super.init()
             
-            parameters?["limit"] = 10
-            parameters?["offset"] = 0
+            parameters?["limit"] = limit
+            parameters?["offset"] = 1300
         }
         
         override func prepareForNext(with response: MarvelCharactersList) {
-            parameters?["offset"] = response.offset + 10
+            let newOffset = response.offset + limit
+            parameters?["offset"] = newOffset
+            isPagesDidEnd = response.offset + response.results.count >= response.total
         }
         
         override func resetToStart() {

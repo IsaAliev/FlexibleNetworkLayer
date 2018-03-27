@@ -22,9 +22,18 @@ class ViewController: UIViewController {
         
         marvelGetAPI.sendRequest()?.onSucces({ (list) in
             print(list)
-        })
+        }).onLastPage {
+            print("We reached last page")
+        }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            print("The example of paging request: One more request")
+            self.marvelGetAPI.sendRequest()?.onSucces({ (list) in
+                print(list)
+            })
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
             print("The example of paging request: One more request")
             self.marvelGetAPI.sendRequest()?.onSucces({ (list) in
                 print(list)
