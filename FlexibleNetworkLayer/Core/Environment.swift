@@ -18,7 +18,7 @@ struct Environment {
         return envDictionary
     }
     
-    subscript(path: String) -> String {
+    subscript(path: String) -> Any? {
         get {
             let pathComponents = path.components(separatedBy: ".")
             var value = env
@@ -27,7 +27,7 @@ struct Environment {
                 let component = pathComponents[i]
                 
                 if i == pathComponents.count - 1 {
-                    return value?[component] as? String ?? ""
+                    return value?[component]
                 } else {
                     value = value?[component] as? [String : Any]
                 }

@@ -18,9 +18,9 @@ struct APIStrings {
     }
     
     struct APIKey {
-        static let imgurClientID = env["APIKey.imgurClientID"]
-        static let marvelPublicKey = env["APIKey.marvelPublicKey"]
-        static let marvelPrivateKey = env["APIKey.marvelPrivateKey"]
+        static let imgurClientID = env["APIKey.imgurClientID"]  as! String
+        static let marvelPublicKey = env["APIKey.marvelPublicKey"]  as! String
+        static let marvelPrivateKey = env["APIKey.marvelPrivateKey"] as! String
     }
 }
 
