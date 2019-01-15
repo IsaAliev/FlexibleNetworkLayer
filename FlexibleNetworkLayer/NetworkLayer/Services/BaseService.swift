@@ -23,6 +23,7 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
     private var lastPageHandler: (() -> ())?
     private var handlingQueue: DispatchQueue?
     private var currentResponse: ResponseRepresentable?
+    private var processOnlyLastPage: Bool = false
     
     var requestPreparator: RequestPreparator? = BaseRequestPreparator()
     
@@ -56,18 +57,38 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
             strongSelf.currentResponse = BaseResponse(data: data, response: response, error: error)
             strongSelf.loger.logResponse(strongSelf.currentResponse!)
             strongSelf.responseHandler?.handleResponse(strongSelf.currentResponse!, completion: { [weak self] (result) in
+                guard let `self` = self else {
+                    return
+                }
+                
                 switch result {
                 case let .Value(model):
-                    self?.processSuccess(model)
-                    self?.processPagedRequestIfNeededWith(model)
+                    self.preparePagedRequestIfNeeded(with: model)
+                    guard self.isRequestPaged() && self.isPagesEnded() else {
+                        self.processSuccess(model)
+                        return
+                    }
+                    
+                    if !self.processOnlyLastPage {
+                        self.processSuccess(model)
+                    }
+                    
+                    self.processLastPage()
                 case let .Error(error):
-                    self?.processError(error)
+                    self.processError(error)
                 }
-                self?.processEnd()
+                self.processEnd()
             })
             
-        }.resume()
+            }.resume()
 
+        return self
+    }
+    
+    @discardableResult
+    func onlyLastPage() -> BaseService<T, E> {
+        processOnlyLastPage = true
+        
         return self
     }
     
@@ -136,7 +157,11 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
             return pagedRequest.isPagesDidEnd
         }
         
-        return false
+        return true
+    }
+    
+    private func isRequestPaged() -> Bool {
+        return request is PagedRequest<T>
     }
     
     private func processSuccess(_ model: T) {
@@ -174,7 +199,7 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
         }
     }
     
-    private func processPagedRequestIfNeededWith(_ model: T) {
+    private func preparePagedRequestIfNeeded(with model: T) {
         guard let pagedRequest = request as? PagedRequest<T> else {
             return
         }
@@ -184,7 +209,11 @@ final class BaseService<T: Decodable, E: ErrorRepresentable>: NSObject, Service,
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
         dispatch { [weak self] in
-            self?.progressHandler?(task.progress.fractionCompleted)
+            if #available(iOS 11.0, *) {
+                self?.progressHandler?(task.progress.fractionCompleted)
+            } else {
+                self?.progressHandler?(Double(task.countOfBytesReceived)/Double(task.countOfBytesExpectedToReceive))
+            }
         }
     }
 }
