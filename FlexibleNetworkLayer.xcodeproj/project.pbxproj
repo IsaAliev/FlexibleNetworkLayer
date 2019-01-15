@@ -42,7 +42,6 @@
 		CE35C8F9204ABFB200AEC0D7 /* VKAPIRequestPreparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8F8204ABFB200AEC0D7 /* VKAPIRequestPreparator.swift */; };
 		CE35C8FB204ABFEB00AEC0D7 /* IMGurRequestPreparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8FA204ABFEB00AEC0D7 /* IMGurRequestPreparator.swift */; };
 		CE35C8FD204AC04000AEC0D7 /* APIStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8FC204AC04000AEC0D7 /* APIStrings.swift */; };
-		CE35C8FF204AC07400AEC0D7 /* IMGurAPIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C8FE204AC07400AEC0D7 /* IMGurAPIBuilder.swift */; };
 		CE35C901204AC4F800AEC0D7 /* IMGurImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C900204AC4F800AEC0D7 /* IMGurImageInfo.swift */; };
 		CE542E90203CA948009B44A8 /* ModelDecodingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE542E8F203CA948009B44A8 /* ModelDecodingProcessor.swift */; };
 		CE542E93203CAAB1009B44A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE542E92203CAAB1009B44A8 /* User.swift */; };
@@ -59,7 +58,6 @@
 		CE552F90206969A000830CE1 /* MarvelCharactersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE552F8F206969A000830CE1 /* MarvelCharactersList.swift */; };
 		CE552F92206969CD00830CE1 /* MarvelCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE552F91206969CD00830CE1 /* MarvelCharacter.swift */; };
 		CE552F9420696AC300830CE1 /* MarvelRequestPreparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE552F9320696AC300830CE1 /* MarvelRequestPreparator.swift */; };
-		CE552F9620696B1000830CE1 /* MarvelAPIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE552F9520696B1000830CE1 /* MarvelAPIBuilder.swift */; };
 		CE552F9A2069734C00830CE1 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE552F992069734C00830CE1 /* Environment.swift */; };
 		CE8E25992051CA8800C1C69A /* Loger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E25982051CA8800C1C69A /* Loger.swift */; };
 		CE8E259B2051CAC200C1C69A /* BaseLoger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E259A2051CAC200C1C69A /* BaseLoger.swift */; };
@@ -70,9 +68,7 @@
 		CEF80D2220400B4C007751D2 /* IntDecodingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D2120400B4C007751D2 /* IntDecodingProcessor.swift */; };
 		CEF80D2B20403115007751D2 /* HTTPPOSTRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D2A20403115007751D2 /* HTTPPOSTRequest.swift */; };
 		CEF80D3120403266007751D2 /* WallGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3020403266007751D2 /* WallGettable.swift */; };
-		CEF80D3320403323007751D2 /* BasicWallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3220403323007751D2 /* BasicWallAPI.swift */; };
 		CEF80D3720408D9F007751D2 /* APIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3620408D9F007751D2 /* APIBuilder.swift */; };
-		CEF80D3920408E03007751D2 /* VKAPIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF80D3820408E03007751D2 /* VKAPIBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,7 +109,6 @@
 		CE35C8F8204ABFB200AEC0D7 /* VKAPIRequestPreparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPIRequestPreparator.swift; sourceTree = "<group>"; };
 		CE35C8FA204ABFEB00AEC0D7 /* IMGurRequestPreparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMGurRequestPreparator.swift; sourceTree = "<group>"; };
 		CE35C8FC204AC04000AEC0D7 /* APIStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStrings.swift; sourceTree = "<group>"; };
-		CE35C8FE204AC07400AEC0D7 /* IMGurAPIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMGurAPIBuilder.swift; sourceTree = "<group>"; };
 		CE35C900204AC4F800AEC0D7 /* IMGurImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMGurImageInfo.swift; sourceTree = "<group>"; };
 		CE542E8F203CA948009B44A8 /* ModelDecodingProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDecodingProcessor.swift; sourceTree = "<group>"; };
 		CE542E92203CAAB1009B44A8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -131,7 +126,6 @@
 		CE552F8F206969A000830CE1 /* MarvelCharactersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharactersList.swift; sourceTree = "<group>"; };
 		CE552F91206969CD00830CE1 /* MarvelCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacter.swift; sourceTree = "<group>"; };
 		CE552F9320696AC300830CE1 /* MarvelRequestPreparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelRequestPreparator.swift; sourceTree = "<group>"; };
-		CE552F9520696B1000830CE1 /* MarvelAPIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPIBuilder.swift; sourceTree = "<group>"; };
 		CE552F972069703100830CE1 /* env.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = env.plist; sourceTree = "<group>"; };
 		CE552F992069734C00830CE1 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		CE8E25982051CA8800C1C69A /* Loger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loger.swift; sourceTree = "<group>"; };
@@ -143,9 +137,7 @@
 		CEF80D2120400B4C007751D2 /* IntDecodingProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntDecodingProcessor.swift; sourceTree = "<group>"; };
 		CEF80D2A20403115007751D2 /* HTTPPOSTRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPPOSTRequest.swift; sourceTree = "<group>"; };
 		CEF80D3020403266007751D2 /* WallGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallGettable.swift; sourceTree = "<group>"; };
-		CEF80D3220403323007751D2 /* BasicWallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicWallAPI.swift; sourceTree = "<group>"; };
 		CEF80D3620408D9F007751D2 /* APIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBuilder.swift; sourceTree = "<group>"; };
-		CEF80D3820408E03007751D2 /* VKAPIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPIBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,7 +402,6 @@
 		CEF80D342040678F007751D2 /* WallAPI */ = {
 			isa = PBXGroup;
 			children = (
-				CEF80D3220403323007751D2 /* BasicWallAPI.swift */,
 				CEF80D3020403266007751D2 /* WallGettable.swift */,
 			);
 			path = WallAPI;
@@ -420,9 +411,6 @@
 			isa = PBXGroup;
 			children = (
 				CEF80D3620408D9F007751D2 /* APIBuilder.swift */,
-				CEF80D3820408E03007751D2 /* VKAPIBuilder.swift */,
-				CE35C8FE204AC07400AEC0D7 /* IMGurAPIBuilder.swift */,
-				CE552F9520696B1000830CE1 /* MarvelAPIBuilder.swift */,
 			);
 			path = APIBuilders;
 			sourceTree = "<group>";
@@ -538,7 +526,6 @@
 				CE1EDE8E203B649300E58426 /* ErrorHandler.swift in Sources */,
 				CE35C8FD204AC04000AEC0D7 /* APIStrings.swift in Sources */,
 				CE542EA4203F4CE4009B44A8 /* NestedModelGetter.swift in Sources */,
-				CEF80D3320403323007751D2 /* BasicWallAPI.swift in Sources */,
 				CEF80D2020400B02007751D2 /* StringDecodingProcessor.swift in Sources */,
 				432055F0203DD41800ECBA0D /* HTTPGetRequest.swift in Sources */,
 				CEF80D3720408D9F007751D2 /* APIBuilder.swift in Sources */,
@@ -548,12 +535,10 @@
 				CE552F9420696AC300830CE1 /* MarvelRequestPreparator.swift in Sources */,
 				CE1EDE82203B626100E58426 /* HTTPRequestRepresentable.swift in Sources */,
 				CE1EDE90203B64D100E58426 /* BaseService.swift in Sources */,
-				CE35C8FF204AC07400AEC0D7 /* IMGurAPIBuilder.swift in Sources */,
 				CEF80D2B20403115007751D2 /* HTTPPOSTRequest.swift in Sources */,
 				CE552F8E206964A500830CE1 /* MarvelCharacterRouter.swift in Sources */,
 				CE1EDE92203B69A700E58426 /* BaseResponse.swift in Sources */,
 				CE8E25992051CA8800C1C69A /* Loger.swift in Sources */,
-				CEF80D3920408E03007751D2 /* VKAPIBuilder.swift in Sources */,
 				CE1EDE96203B6C6B00E58426 /* UsersRouter.swift in Sources */,
 				CE542E9F203CBCF2009B44A8 /* WallItem.swift in Sources */,
 				CE1EDE8A203B635300E58426 /* ResponseHandler.swift in Sources */,
@@ -561,7 +546,6 @@
 				CE552F862069602E00830CE1 /* PagedRequest.swift in Sources */,
 				CE1EDE98203B6E0B00E58426 /* BaseError.swift in Sources */,
 				CE542E9D203CBCDE009B44A8 /* Wall.swift in Sources */,
-				CE552F9620696B1000830CE1 /* MarvelAPIBuilder.swift in Sources */,
 				CE35C8F9204ABFB200AEC0D7 /* VKAPIRequestPreparator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,32 +14,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-        marvelGetAPI = MarvelAPIBuilder().buildAPI(MarvelCharactersList.self,
-                                                   request: MarvelCharacterRouter.GET(),
-                                                   decodingProcessor: nil,
-                                                   nestedModelGetter: ResponseModelGetter.data)
+        marvelGetAPI = APIBuilder()
+            .setRequest(MarvelCharacterRouter.GET())
+            .setRequestPreparator(MarvelRequestPreparator())
+            .setNestedModelGetter(ResponseModelGetter.data)
+            .build(for: MarvelCharactersList.self)
         
         marvelGetAPI.sendRequest()?.onSucces({ (list) in
             print(list)
         }).onLastPage {
             print("We reached last page")
         }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            print("The example of paging request: One more request")
-            self.marvelGetAPI.sendRequest()?.onSucces({ (list) in
-                print(list)
-            })
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
-            print("The example of paging request: One more request")
-            self.marvelGetAPI.sendRequest()?.onSucces({ (list) in
-                print(list)
-            })
-        }
-        
     }
     
     @IBOutlet weak var textField: UITextField!
