@@ -27,6 +27,11 @@ extension NestedModelGetter {
         return keyPath.split(separator: ".").map({ String($0) })
     }
     
+    func getFrom(_ json: JSON) throws -> JSON {
+        let data = try JSONSerialization.data(withJSONObject: json, options: [])
+        return try getFrom(data)
+    }
+    
     func getFrom(_ data: Data) throws -> JSON {
         let jsonSerializer = JSONSerializer()
         
