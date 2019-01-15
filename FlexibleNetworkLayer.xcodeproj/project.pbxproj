@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		431414D221EDC96A0022DBF7 /* Cacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431414D021EDC96A0022DBF7 /* Cacher.swift */; };
+		431414D321EDC96A0022DBF7 /* HeadersHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431414D121EDC96A0022DBF7 /* HeadersHandler.swift */; };
 		432055E9203DAC2D00ECBA0D /* RequestPreparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432055E8203DAC2D00ECBA0D /* RequestPreparator.swift */; };
 		432055EB203DAC5300ECBA0D /* BaseRequestPreparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432055EA203DAC5300ECBA0D /* BaseRequestPreparator.swift */; };
 		432055F0203DD41800ECBA0D /* HTTPGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432055EF203DD41800ECBA0D /* HTTPGetRequest.swift */; };
@@ -58,7 +60,6 @@
 		CE552F92206969CD00830CE1 /* MarvelCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE552F91206969CD00830CE1 /* MarvelCharacter.swift */; };
 		CE552F9420696AC300830CE1 /* MarvelRequestPreparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE552F9320696AC300830CE1 /* MarvelRequestPreparator.swift */; };
 		CE552F9620696B1000830CE1 /* MarvelAPIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE552F9520696B1000830CE1 /* MarvelAPIBuilder.swift */; };
-		CE552F982069703100830CE1 /* env.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE552F972069703100830CE1 /* env.plist */; };
 		CE552F9A2069734C00830CE1 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE552F992069734C00830CE1 /* Environment.swift */; };
 		CE8E25992051CA8800C1C69A /* Loger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E25982051CA8800C1C69A /* Loger.swift */; };
 		CE8E259B2051CAC200C1C69A /* BaseLoger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E259A2051CAC200C1C69A /* BaseLoger.swift */; };
@@ -75,6 +76,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		431414D021EDC96A0022DBF7 /* Cacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cacher.swift; sourceTree = "<group>"; };
+		431414D121EDC96A0022DBF7 /* HeadersHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersHandler.swift; sourceTree = "<group>"; };
 		432055E8203DAC2D00ECBA0D /* RequestPreparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPreparator.swift; sourceTree = "<group>"; };
 		432055EA203DAC5300ECBA0D /* BaseRequestPreparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestPreparator.swift; sourceTree = "<group>"; };
 		432055EF203DD41800ECBA0D /* HTTPGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPGetRequest.swift; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 		4366F68E203C1C6F00A06CC7 /* ResponseHandlers */ = {
 			isa = PBXGroup;
 			children = (
+				431414D021EDC96A0022DBF7 /* Cacher.swift */,
+				431414D121EDC96A0022DBF7 /* HeadersHandler.swift */,
 				CE1EDE89203B635300E58426 /* ResponseHandler.swift */,
 				CE1EDE93203B69FC00E58426 /* HTTPResponseHandler.swift */,
 			);
@@ -485,7 +490,6 @@
 				CE1EDE79203B622E00E58426 /* LaunchScreen.storyboard in Resources */,
 				CEBE9794204B27EB00184563 /* BergenHordalandNorwayVagen.jpg in Resources */,
 				CE1EDE76203B622E00E58426 /* Assets.xcassets in Resources */,
-				CE552F982069703100830CE1 /* env.plist in Resources */,
 				CE1EDE74203B622E00E58426 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +522,7 @@
 				CEBE4303204BDCC1006217A0 /* BodyCreator.swift in Sources */,
 				4366F69D203C603900A06CC7 /* SuccessResponseChecker.swift in Sources */,
 				CE542EA7203F51E8009B44A8 /* ResponseModelGetter.swift in Sources */,
+				431414D321EDC96A0022DBF7 /* HeadersHandler.swift in Sources */,
 				4366F695203C562200A06CC7 /* BaseErrorHandler.swift in Sources */,
 				4366F697203C565600A06CC7 /* BaseErrorTypeHandler.swift in Sources */,
 				4366F686203C15D200A06CC7 /* Serializer.swift in Sources */,
@@ -552,6 +557,7 @@
 				CE1EDE96203B6C6B00E58426 /* UsersRouter.swift in Sources */,
 				CE542E9F203CBCF2009B44A8 /* WallItem.swift in Sources */,
 				CE1EDE8A203B635300E58426 /* ResponseHandler.swift in Sources */,
+				431414D221EDC96A0022DBF7 /* Cacher.swift in Sources */,
 				CE552F862069602E00830CE1 /* PagedRequest.swift in Sources */,
 				CE1EDE98203B6E0B00E58426 /* BaseError.swift in Sources */,
 				CE542E9D203CBCDE009B44A8 /* Wall.swift in Sources */,

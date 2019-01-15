@@ -34,7 +34,15 @@ extension HTTPRequestRepresentable {
             for (key, value) in parametersJSON {
                 var valueString = value as? String
                 if valueString == nil {
-                    valueString = String(describing: value as! NSNumber)
+                    if let number = value as? NSNumber {
+                        valueString = String(describing: number)
+                    } else if let dictionary = value as? [String: String] {
+                        var dictString = "{"
+                        for (key, value) in dictionary {
+                            dictString += "\"\(key)\":\"\(value)\","
+                        }
+                        valueString = (String(dictString.dropLast()) + "}").removingPercentEncoding ?? ""
+                    }
                 }
                 queryItems.append(URLQueryItem(name: key, value: valueString))
             }

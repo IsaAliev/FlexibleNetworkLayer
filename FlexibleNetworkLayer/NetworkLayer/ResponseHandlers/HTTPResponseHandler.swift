@@ -24,8 +24,14 @@ class HTTPResponseHandler<T: Decodable, E: ErrorRepresentable>: ResponseHandler 
     var successResponseChecker: SuccessResponseChecker = BaseSuccessResponseChecker()
     var decodingProcessor = ModelDecodingProcessor<T>()
     var nestedModelGetter: NestedModelGetter?
+    var cacher: Cacher<T>?
+    var headersHandler: HeadersHandler?
     
     func handleResponse(_ response: ResponseRepresentable, completion: (Result<T, E>) -> ()) {
+        if let headers = (response.response as? HTTPURLResponse)?.allHeaderFields {
+            headersHandler?.handleHeaders(headers)
+        }
+        
         if successResponseChecker.isSuccessResponse(response) {
             processSuccessResponse(response, completion: completion)
         } else {
@@ -69,6 +75,7 @@ class HTTPResponseHandler<T: Decodable, E: ErrorRepresentable>: ResponseHandler 
             return
         }
         
+        cacher?.cache(result)
         completion(.Value(result))
     }
     
